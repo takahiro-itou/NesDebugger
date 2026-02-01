@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MyApplicationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthenticationMode>0</AuthenticationMode>
+  <EnableVisualStyles>true</EnableVisualStyles>
+  <MainForm>MainView</MainForm>
+  <MySubMain>true</MySubMain>
+  <SaveMySettingsOnExit>true</SaveMySettingsOnExit>
+  <ShutdownMode>0</ShutdownMode>
+  <SingleInstance>false</SingleInstance>
+</MyApplicationData>

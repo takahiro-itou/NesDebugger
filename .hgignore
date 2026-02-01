@@ -1,0 +1,20 @@
+
+syntax: glob
+ipch/
+bin/
+obj/
+
+*.sdf
+*.suo
+
+syntax: regexp
+^\.git/
+^Core/Lib/Tests/.git
+^\.vs/
+
+^Bin/
+^Libs/
+^Objs/
+
+subinclude:Core/.hgignore
+
