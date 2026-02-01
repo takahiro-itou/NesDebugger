@@ -1,9 +1,9 @@
 ﻿//  -*-  coding: utf-8-with-signature;  mode: c++  -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---   Graphics Test Project.   ---                  **
+**                  ----   NES Debugger Project   ----                  **
 **                                                                      **
-**          Copyright (C), 2025-2025, Takahiro Itou                     **
+**          Copyright (C), 2026-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
 **                                                                      **
 **          License: (See COPYING or LICENSE files)                     **
@@ -20,7 +20,7 @@
 
 #pragma once
 
-#include    "Sample/Images/FullColorImage.h"
+#include    "NesDbg/Images/FullColorImage.h"
 
 
 using namespace System;
@@ -152,7 +152,7 @@ public:
 //
 private:
 
-    typedef     Sample::Images::FullColorImage  WrapTarget;
+    typedef     NesDbg::Images::FullColorImage  WrapTarget;
 
     WrapTarget  *   m_ptrObj;
 };
