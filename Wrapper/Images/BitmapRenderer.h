@@ -1,9 +1,9 @@
 ﻿//  -*-  coding: utf-8-with-signature;  mode: c++  -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---   Graphics Test Project.   ---                  **
+**                  ----   NES Debugger Project   ----                  **
 **                                                                      **
-**          Copyright (C), 2025-2025, Takahiro Itou                     **
+**          Copyright (C), 2026-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
 **                                                                      **
 **          License: (See COPYING or LICENSE files)                     **
@@ -156,7 +156,7 @@ public:
 //    Member Variables.
 //
 private:
-    typedef     Sample::Images::BitmapRenderer  WrapTarget;
+    typedef     NesDbg::Images::BitmapRenderer  WrapTarget;
 
     WrapTarget  *   m_ptrObj;
 

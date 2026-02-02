@@ -7,12 +7,12 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <PreprocessorDefinitions>
-        $(SAMPLE_PPDEFS);
+        $(NESDBG_PPDEFS);
         WIN32;
         %(PreprocessorDefinitions)
       </PreprocessorDefinitions>
       <AdditionalIncludeDirectories>
-        $(SAMPLE_CORE_INC_DIR);
+        $(NESDBG_CORE_INC_DIR);
         %(AdditionalIncludeDirectories)
       </AdditionalIncludeDirectories>
       <WarningLevel>Level3</WarningLevel>
