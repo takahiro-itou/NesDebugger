@@ -27,7 +27,7 @@
 
 using namespace System;
 
-namespace  NesDbgWrapper  {
+namespace  NesDbgWrap  {
 namespace  Common  {
 
 //========================================================================
@@ -143,4 +143,4 @@ private:
 };
 
 }   //  End of namespace  Common
-}   //  End of namespace  SampleWrapper
+}   //  End of namespace  SampleWrap

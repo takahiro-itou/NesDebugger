@@ -23,7 +23,7 @@
 #include    <string>
 
 
-namespace  NesDbgWrapper  {
+namespace  NesDbgWrap  {
 namespace  Common  {
 
 //----------------------------------------------------------------
@@ -82,4 +82,4 @@ SampleDocument::setMessage(
 }
 
 }   //  End of namespace  Common
-}   //  End of namespace  NesDbgWrapper
+}   //  End of namespace  NesDbgWrap
