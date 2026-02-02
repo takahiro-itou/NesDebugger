@@ -1,4 +1,5 @@
-﻿#include "stdafx.h"
+﻿
+#include    "PreCompile.h"
 
 using namespace System;
 using namespace System::Reflection;

@@ -14,13 +14,13 @@
 
 // This is the main DLL file.
 
-#include "StdAfx.h"
+#include    "PreCompile.h"
 
-#include <msclr/marshal_cppstd.h>
+#include    <msclr/marshal_cppstd.h>
 
-#include "Wrapper.h"
+#include    "Wrapper.h"
 
-#include <string>
+#include    <string>
 
 
 namespace  SampleWrapper  {

@@ -18,9 +18,9 @@
 **      @file       Images/BitmapRenderer.cpp
 **/
 
-#include "StdAfx.h"
+#include    "PreCompile.h"
 
-#include "BitmapRenderer.h"
+#include    "BitmapRenderer.h"
 
 
 namespace  SampleWrapper  {

@@ -15,11 +15,7 @@
 /**
 **      Generate Pre-Compiled Header.
 **
-**      @file       StdAfx.h
+**      @file       PreCompile.h
 **/
 
-// stdafx.cpp : source file that includes just the standard includes
-// Wrapper.pch will be the pre-compiled header
-// stdafx.obj will contain the pre-compiled type information
-
-#include "StdAfx.h"
+#include    "PreCompile.h"
