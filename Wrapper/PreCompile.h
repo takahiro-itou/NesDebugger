@@ -24,8 +24,11 @@
 
 #pragma once
 
-#include    <windows.h>
+#if !defined( NESDBG_PCH_INCLUDED_PRE_COMPILE_H )
+#    include    "NesDbg/pch/PreCompile.h"
+#endif
 
-#if !defined( NESDBG_COMMON_INCLUDED_NESDBG_PROJECT_H )
-#    include    "NesDbg/Common/NesDbgProject.h"
+#if !defined( NESDBG_SYS_INCLUDED_WINDOWS_H )
+#    include    <windows.h>
+#    define   NESDBG_SYS_INCLUDED_WINDOWS_H
 #endif
