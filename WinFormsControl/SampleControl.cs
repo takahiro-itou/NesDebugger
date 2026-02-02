@@ -167,9 +167,9 @@ public partial class SampleControl : UserControl
         OnRunButtonClick(e);
     }
 
-    private SampleWrapper.Images.FullColorImage?    m_image;
-    private SampleWrapper.Images.BitmapRenderer     m_bitmapRenderer
-        = new SampleWrapper.Images.BitmapRenderer();
+    private NesDbgWrap.Images.FullColorImage?   m_image;
+    private NesDbgWrap.Images.BitmapRenderer    m_bitmapRenderer
+        = new NesDbgWrap.Images.BitmapRenderer();
 
     private System.Drawing.Color    m_marginColor;
 

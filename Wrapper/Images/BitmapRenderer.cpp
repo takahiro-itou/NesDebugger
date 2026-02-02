@@ -18,12 +18,12 @@
 **      @file       Images/BitmapRenderer.cpp
 **/
 
-#include "StdAfx.h"
+#include    "PreCompile.h"
 
-#include "BitmapRenderer.h"
+#include    "BitmapRenderer.h"
 
 
-namespace  SampleWrapper  {
+namespace  NesDbgWrap  {
 namespace  Images  {
 
 namespace  {
@@ -185,4 +185,4 @@ BitmapRenderer::Image::get()
 //
 
 }   //  End of namespace  Images
-}   //  End of namespace  SampleWrapper
+}   //  End of namespace  NesDbgWrap

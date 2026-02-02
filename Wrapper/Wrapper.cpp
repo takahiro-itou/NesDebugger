@@ -14,16 +14,16 @@
 
 // This is the main DLL file.
 
-#include "StdAfx.h"
+#include    "PreCompile.h"
 
-#include <msclr/marshal_cppstd.h>
+#include    <msclr/marshal_cppstd.h>
 
-#include "Wrapper.h"
+#include    "Wrapper.h"
 
-#include <string>
+#include    <string>
 
 
-namespace  SampleWrapper  {
+namespace  NesDbgWrap  {
 namespace  Common  {
 
 //----------------------------------------------------------------
@@ -82,4 +82,4 @@ SampleDocument::setMessage(
 }
 
 }   //  End of namespace  Common
-}   //  End of namespace  SampleWrapper
+}   //  End of namespace  NesDbgWrap
