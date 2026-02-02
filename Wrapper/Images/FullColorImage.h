@@ -25,7 +25,7 @@
 
 using namespace System;
 
-namespace  SampleWrapper  {
+namespace  NesDbgWrap  {
 namespace  Images  {
 
 //========================================================================
@@ -158,4 +158,4 @@ private:
 };
 
 }   //  End of namespace  Common
-}   //  End of namespace  SampleWrapper
+}   //  End of namespace  NesDbgWrap

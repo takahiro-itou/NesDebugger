@@ -18,12 +18,12 @@
 **      @file       Images/FullColorImage.cpp
 **/
 
-#include "StdAfx.h"
+#include    "PreCompile.h"
 
-#include "FullColorImage.h"
+#include    "FullColorImage.h"
 
 
-namespace  SampleWrapper  {
+namespace  NesDbgWrap  {
 namespace  Images  {
 
 namespace  {
@@ -158,4 +158,4 @@ FullColorImage::fillRectangle(
 //
 
 }   //  End of namespace  Common
-}   //  End of namespace  SampleWrapper
+}   //  End of namespace  NesDbgWrap
