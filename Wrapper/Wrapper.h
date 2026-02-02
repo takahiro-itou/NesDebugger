@@ -1,8 +1,29 @@
-﻿// Wrapper.h
+﻿//  -*-  coding: utf-8-with-signature;  mode: c++  -*-  //
+/*************************************************************************
+**                                                                      **
+**                  ----   NES Debugger Project   ----                  **
+**                                                                      **
+**          Copyright (C), 2026-2026, Takahiro Itou                     **
+**          All Rights Reserved.                                        **
+**                                                                      **
+**          License: (See COPYING or LICENSE files)                     **
+**          GNU Affero General Public License (AGPL) version 3,         **
+**          or (at your option) any later version.                      **
+**                                                                      **
+*************************************************************************/
+
+/**
+**      An Interface of SampleDocument class.
+**
+**      @file       Wrapper.h
+**/
 
 #pragma once
 
-#include    "Sample/Common/SampleDocument.h"
+#if !defined( NESDBG_COMMON_INCLUDED_SAMPLE_DOCUMENT_H )
+#    include    "NesDbg/Common/SampleDocument.h"
+#endif
+
 
 using namespace System;
 
@@ -116,7 +137,7 @@ public:
 //
 private:
 
-    typedef     Sample::Common::SampleDocument  WrapTarget;
+    typedef     NesDbg::Common::SampleDocument  WrapTarget;
 
     WrapTarget  *   m_ptrObj;
 };

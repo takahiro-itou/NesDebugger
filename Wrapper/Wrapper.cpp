@@ -1,12 +1,27 @@
-﻿// This is the main DLL file.
+﻿//  -*-  coding: utf-8-with-signature;  mode: c++  -*-  //
+/*************************************************************************
+**                                                                      **
+**                  ----   NES Debugger Project   ----                  **
+**                                                                      **
+**          Copyright (C), 2026-2026, Takahiro Itou                     **
+**          All Rights Reserved.                                        **
+**                                                                      **
+**          License: (See COPYING or LICENSE files)                     **
+**          GNU Affero General Public License (AGPL) version 3,         **
+**          or (at your option) any later version.                      **
+**                                                                      **
+*************************************************************************/
 
-#include "stdafx.h"
+// This is the main DLL file.
+
+#include "StdAfx.h"
 
 #include <msclr/marshal_cppstd.h>
 
 #include "Wrapper.h"
 
 #include <string>
+
 
 namespace  SampleWrapper  {
 namespace  Common  {
