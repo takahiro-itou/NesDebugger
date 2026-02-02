@@ -27,7 +27,7 @@
 
 using namespace System;
 
-namespace  SampleWrapper  {
+namespace  NesDbgWrapper  {
 namespace  Common  {
 
 //========================================================================
