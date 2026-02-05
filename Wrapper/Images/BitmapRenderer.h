@@ -20,7 +20,7 @@
 
 #pragma once
 
-#include    "Sample/Images/BitmapRenderer.h"
+#include    "WinAPI/Images/BitmapRenderer.h"
 
 #include    "FullColorImage.h"
 
