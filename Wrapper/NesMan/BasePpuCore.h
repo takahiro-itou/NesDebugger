@@ -20,10 +20,19 @@
 
 #pragma once
 
-#include    "NesDbg/NesMan/BasePpuCore.h"
+#if !defined( NESDBG_NESMAN_INCLUDED_BASE_PPU_CORE_H )
+#    include    "NesDbg/NesMan/BasePpuCore.h"
+#endif
 
 
 using namespace System;
+
+//  クラスの前方宣言。  //
+namespace  NesDbg  {
+namespace  NesMan  {
+class   Nesmanager;
+}   //  End of namespace  NesMan
+}   //  End of namespace  NesDbg
 
 namespace  NesDbgWrap  {
 namespace  NesMan  {
@@ -46,6 +55,8 @@ public ref  class  BasePpuCore
 private:
 
     typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
+
+    typedef     NesDbg::NesMan::NesManager      WrapNesMan;
 
 //========================================================================
 //
@@ -126,9 +137,12 @@ public:
 //
 private:
 
+    WrapNesMan  *   m_pManNes;
+
     WrapTarget  *   m_ptrObj;
 
     NesManager ^    m_wManNes;
+
 };
 
 }   //  End of namespace  NesMan

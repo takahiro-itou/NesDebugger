@@ -21,6 +21,9 @@
 #include    "PreCompile.h"
 
 #include    "BasePpuCore.h"
+#include    "NesManager.h"
+
+#include    "NesDbg/NesMan/NesManager.h"
 
 
 namespace  NesDbgWrap  {
@@ -48,6 +51,9 @@ namespace  {
 
 BasePpuCore::BasePpuCore(
         NesManager^ manNes)
+    : m_pManNes(manNes->unmanagedObject),
+      m_ptrObj(new WrapTarget(*m_pManNes, m_pManNes->getMemoryManager())),
+      m_wManNes(manNes)
 {
 }
 
@@ -59,6 +65,7 @@ BasePpuCore::BasePpuCore(
 BasePpuCore::~BasePpuCore()
 {
     //  マネージドリソースを破棄する。              //
+    this->m_wManNes = nullptr;
 
     //  続いて、アンマネージドリソースも破棄する。  //
     this->!BasePpuCore();
@@ -73,6 +80,8 @@ BasePpuCore::!BasePpuCore()
 {
     delete  this->m_ptrObj;
     this->m_ptrObj  = nullptr;
+
+    this->m_pManNes = nullptr;
 }
 
 //========================================================================
