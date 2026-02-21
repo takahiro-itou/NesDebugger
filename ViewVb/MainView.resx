@@ -243,37 +243,37 @@
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
-  <data name="&gt;&gt;GameScreen1.Name" xml:space="preserve">
-    <value>GameScreen1</value>
+  <data name="&gt;&gt;wfcGameView.Name" xml:space="preserve">
+    <value>wfcGameView</value>
   </data>
-  <data name="&gt;&gt;GameScreen1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;wfcGameView.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GameScreen1.Type" xml:space="preserve">
+  <data name="&gt;&gt;wfcGameView.Type" xml:space="preserve">
     <value>WinFormsControl.GameScreen, WinFormsControl, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;GameScreen1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;wfcGameView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GameScreen1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="wfcGameView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="GameScreen1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="wfcGameView.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
   </data>
-  <data name="GameScreen1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="wfcGameView.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
   </data>
-  <data name="GameScreen1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="wfcGameView.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="GameScreen1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="wfcGameView.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>300, 280</value>
   </data>
-  <data name="GameScreen1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="wfcGameView.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 280</value>
   </data>
-  <data name="GameScreen1.TabIndex" type="System.Int32, mscorlib">
+  <data name="wfcGameView.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
 

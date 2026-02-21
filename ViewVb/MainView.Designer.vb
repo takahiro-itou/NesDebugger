@@ -35,9 +35,8 @@ Partial Class MainView
         mnuRun = New ToolStripMenuItem()
         mnuRunCount = New ToolStripMenuItem()
 
-        picGame = New PictureBox()
         dlgOpenFile = New OpenFileDialog()
-        GameScreen1 = New WinFormsControl.GameScreen()
+        wfcGameView = New WinFormsControl.GameScreen()
         mnuMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -97,17 +96,17 @@ Partial Class MainView
         resources.ApplyResources(dlgOpenFile, "dlgOpenFile")
 
         '
-        ' GameScreen1
+        ' wfcGameView
         '
-        resources.ApplyResources(GameScreen1, "GameScreen1")
-        GameScreen1.Name = "GameScreen1"
+        resources.ApplyResources(wfcGameView, "wfcGameView")
+        wfcGameView.Name = "wfcGameView"
 
         '
         ' MainView
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = AutoScaleMode.None
-        Me.Controls.Add(GameScreen1)
+        Me.Controls.Add(wfcGameView)
         Me.Controls.Add(mnuMain)
         Me.MainMenuStrip = Me.mnuMain
         Me.Name = "MainView"
@@ -118,7 +117,7 @@ Partial Class MainView
 
     End Sub
 
-    Friend WithEvents GameScreen1 As WinFormsControl.GameScreen
+    Friend WithEvents wfcGameView As WinFormsControl.GameScreen
     Friend WithEvents mnuMain As MenuStrip
     Friend WithEvents mnuFile As ToolStripMenuItem
     Friend WithEvents mnuFileClose As ToolStripMenuItem
@@ -129,7 +128,6 @@ Partial Class MainView
     Friend WithEvents mnuRun As ToolStripMenuItem
     Friend WithEvents mnuRunCount As ToolStripMenuItem
 
-    Friend WithEvents picGame As PictureBox
     Friend WithEvents dlgOpenFile As OpenFileDialog
 
 End Class
