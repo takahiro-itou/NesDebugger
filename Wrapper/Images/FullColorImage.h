@@ -40,6 +40,9 @@ public ref  class  FullColorImage
 //
 //    Internal Type Definitions.
 //
+private:
+
+    typedef     NesDbg::Images::FullColorImage  WrapTarget;
 
 //========================================================================
 //
@@ -138,6 +141,22 @@ public:
 
 //========================================================================
 //
+//    Properties.
+//
+public:
+
+    //----------------------------------------------------------------
+    /**   ラップ対象オブジェクトを取得する。
+    **
+    **/
+    property    WrapTarget  *
+    UnmanagedObject
+    {
+        WrapTarget *    get();
+    }
+
+//========================================================================
+//
 //    Protected Member Functions.
 //
 
@@ -151,8 +170,6 @@ public:
 //    Member Variables.
 //
 private:
-
-    typedef     NesDbg::Images::FullColorImage  WrapTarget;
 
     WrapTarget  *   m_ptrObj;
 };

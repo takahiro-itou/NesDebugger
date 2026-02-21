@@ -149,6 +149,21 @@ FullColorImage::fillRectangle(
 
 //========================================================================
 //
+//    Properties.
+//
+
+//----------------------------------------------------------------
+//    ラップ対象オブジェクトを取得する。
+//
+
+FullColorImage::WrapTarget  *
+FullColorImage::UnmanagedObject::get()
+{
+    return ( this->m_ptrObj );
+}
+
+//========================================================================
+//
 //    Protected Member Functions.
 //
 
