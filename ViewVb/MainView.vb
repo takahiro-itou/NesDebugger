@@ -18,7 +18,7 @@ Private Sub showGraphics()
 ''--------------------------------------------------------------------
 ''    画像を表示する
 ''--------------------------------------------------------------------
-    Me.wfcGameView.drawGraphics()
+    Me.wfcGameView.drawScreen()
 End Sub
 
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
