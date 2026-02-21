@@ -40,6 +40,9 @@ public ref  class  NesManager
 //
 //    Internal Type Definitions.
 //
+private:
+
+    typedef     NesDbg::NesMan::NesManager      WrapTarget;
 
 //========================================================================
 //
@@ -102,6 +105,17 @@ public:
 //
 //    Properties.
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   ラップ対象オブジェクトを取得する。
+    **
+    **/
+    property    WrapTarget  *
+    unmanagedObject
+    {
+        WrapTarget *    get();
+    }
 
 //========================================================================
 //
@@ -118,7 +132,6 @@ public:
 //    Member Variables.
 //
 private:
-    typedef     NesDbg::NesMan::NesManager      WrapTarget;
 
     WrapTarget  *   m_ptrObj;
 };

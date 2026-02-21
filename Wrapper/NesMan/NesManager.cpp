@@ -110,6 +110,15 @@ NesManager::!NesManager()
 //    Properties.
 //
 
+//----------------------------------------------------------------
+//    ラップ対象オブジェクトを取得する。
+
+NesManager::WrapTarget  *
+NesManager::unmanagedObject::get()
+{
+    return ( this->m_ptrObj );
+}
+
 //========================================================================
 //
 //    Protected Member Functions.
