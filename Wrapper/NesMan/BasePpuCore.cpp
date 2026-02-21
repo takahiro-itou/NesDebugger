@@ -105,6 +105,16 @@ BasePpuCore::!BasePpuCore()
 //    Public Member Functions (Virtual Functions).
 //
 
+//----------------------------------------------------------------
+//    画面を描画する。
+//
+
+void
+BasePpuCore::drawScreen()
+{
+    this->m_ptrObj->drawScreen();
+}
+
 //========================================================================
 //
 //    Public Member Functions.
