@@ -22,6 +22,7 @@
 
 #include    "BasePpuCore.h"
 #include    "NesManager.h"
+#include    "../Images/FullColorImage.h"
 
 #include    "NesDbg/NesMan/NesManager.h"
 
@@ -124,7 +125,7 @@ BasePpuCore::!BasePpuCore()
 //
 
 Images::FullColorImage^
-NesMan::BasePpuCore::targetImage::get()
+NesMan::BasePpuCore::TargetImage::get()
 {
     return ( this->m_wImage );
 }
@@ -134,9 +135,10 @@ NesMan::BasePpuCore::targetImage::get()
 //
 
 void
-NesMan::BasePpuCore::targetImage::set(Images::FullColorImage^ value)
+NesMan::BasePpuCore::TargetImage::set(Images::FullColorImage^ value)
 {
     this->m_wImage  = value;
+    this->m_ptrObj->setImageInstance(value->UnmanagedObject);
 }
 
 //========================================================================

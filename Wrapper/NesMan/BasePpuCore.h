@@ -132,7 +132,7 @@ public:
     /**   イメージオブジェクト。
     **
     **/
-    property    Images::FullColorImage^     targetImage
+    property    Images::FullColorImage^     TargetImage
     {
         Images::FullColorImage^ get();
         void set(Images::FullColorImage^ value);
