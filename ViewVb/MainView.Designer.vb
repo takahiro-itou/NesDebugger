@@ -27,10 +27,15 @@ Partial Class MainView
 
         mnuMain = New MenuStrip()
         mnuFile = New ToolStripMenuItem()
+        mnuFileOpen = New ToolStripMenuItem()
+        mnuFileClose = New ToolStripMenuItem()
+        mnuFileRecent = New ToolStripMenuItem()
+        mnuFileSep0 = New ToolStripSeparator
         mnuFileExit = New ToolStripMenuItem()
         mnuRun = New ToolStripMenuItem()
         mnuRunCount = New ToolStripMenuItem()
 
+        picGame = New PictureBox()
         OpenFileDialog1 = New OpenFileDialog()
         SampleControl1 = New WinFormsControl.SampleControl()
         mnuMain.SuspendLayout()
@@ -95,9 +100,15 @@ Partial Class MainView
     Friend WithEvents SampleControl1 As WinFormsControl.SampleControl
     Friend WithEvents mnuMain As MenuStrip
     Friend WithEvents mnuFile As ToolStripMenuItem
+    Friend WithEvents mnuFileClose As ToolStripMenuItem
     Friend WithEvents mnuFileExit As ToolStripMenuItem
+    Friend WithEvents mnuFileOpen As ToolStripMenuItem
+    Friend WithEvents mnuFileSep0 As ToolStripSeparator
+    Friend WithEvents mnuFileRecent As ToolStripMenuItem
     Friend WithEvents mnuRun As ToolStripMenuItem
     Friend WithEvents mnuRunCount As ToolStripMenuItem
+
+    Friend WithEvents picGame As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
 
 End Class
