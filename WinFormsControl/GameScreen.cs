@@ -122,6 +122,14 @@ public partial class GameScreen : UserControl
         return true;
     }
 
+    public virtual System.Boolean
+    setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
+    {
+        this.m_wManPpu  = manPpu;
+
+        return true;
+    }
+
     //----------------------------------------------------------------
     /**   MarginAreaColor プロパティ
     **

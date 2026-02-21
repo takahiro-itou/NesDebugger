@@ -9,6 +9,8 @@ Private Function initializeScreen(
 ''    画面を初期化する
 ''--------------------------------------------------------------------
     Me.wfcGameView.initializeScreenImage(w, h)
+    Me.wfcGameView.setupPpuManager(Me.m_manPpu)
+    showGraphics()
     Return True
 End Function
 
