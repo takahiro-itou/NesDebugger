@@ -96,6 +96,7 @@ public partial class GameScreen : UserControl
     public virtual System.Boolean
     setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
     {
+        manPpu.TargetImage  = this.m_screenImage;
         this.m_wManPpu  = manPpu;
 
         return true;
