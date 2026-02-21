@@ -17,9 +17,9 @@ using System.ComponentModel;
 namespace WinFormsControl
 {
 
-public partial class SampleControl : UserControl
+public partial class GameScreen : UserControl
 {
-    public SampleControl()
+    public GameScreen()
     {
         InitializeComponent();
     }
@@ -173,6 +173,6 @@ public partial class SampleControl : UserControl
 
     private System.Drawing.Color    m_marginColor;
 
-}   //  End of class SampleControl
+}   //  End of class GameScreen
 
 }   //  End of namespace WinFormsControl

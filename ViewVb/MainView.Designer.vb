@@ -37,7 +37,7 @@ Partial Class MainView
 
         picGame = New PictureBox()
         dlgOpenFile = New OpenFileDialog()
-        SampleControl1 = New WinFormsControl.SampleControl()
+        GameScreen1 = New WinFormsControl.GameScreen()
         mnuMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -97,17 +97,17 @@ Partial Class MainView
         resources.ApplyResources(dlgOpenFile, "dlgOpenFile")
 
         '
-        ' SampleControl1
+        ' GameScreen1
         '
-        resources.ApplyResources(SampleControl1, "SampleControl1")
-        SampleControl1.Name = "SampleControl1"
+        resources.ApplyResources(GameScreen1, "GameScreen1")
+        GameScreen1.Name = "GameScreen1"
 
         '
         ' MainView
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = AutoScaleMode.None
-        Me.Controls.Add(SampleControl1)
+        Me.Controls.Add(GameScreen1)
         Me.Controls.Add(mnuMain)
         Me.MainMenuStrip = Me.mnuMain
         Me.Name = "MainView"
@@ -118,7 +118,7 @@ Partial Class MainView
 
     End Sub
 
-    Friend WithEvents SampleControl1 As WinFormsControl.SampleControl
+    Friend WithEvents GameScreen1 As WinFormsControl.GameScreen
     Friend WithEvents mnuMain As MenuStrip
     Friend WithEvents mnuFile As ToolStripMenuItem
     Friend WithEvents mnuFileClose As ToolStripMenuItem
