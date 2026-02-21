@@ -28,6 +28,9 @@ using namespace System;
 namespace  NesDbgWrap  {
 namespace  NesMan  {
 
+//  クラスの前方宣言。  //
+ref  class  NesManager;
+
 //========================================================================
 //
 //    BasePpuCore  class.
@@ -40,6 +43,9 @@ public ref  class  BasePpuCore
 //
 //    Internal Type Definitions.
 //
+private:
+
+    typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
 
 //========================================================================
 //
@@ -49,10 +55,11 @@ public:
 
     //----------------------------------------------------------------
     /**   インスタンスを初期化する
-    **  （デフォルトコンストラクタ）。
+    **  （コンストラクタ）。
     **
     **/
-    BasePpuCore();
+    BasePpuCore(
+            NesManager^ manNes);
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
@@ -118,9 +125,10 @@ public:
 //    Member Variables.
 //
 private:
-    typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
 
     WrapTarget  *   m_ptrObj;
+
+    NesManager ^    m_wManNes;
 };
 
 }   //  End of namespace  NesMan

@@ -43,11 +43,11 @@ namespace  {
 
 //----------------------------------------------------------------
 //    インスタンスを初期化する
-//  （デフォルトコンストラクタ）。
+//  （コンストラクタ）。
 //
 
-BasePpuCore::BasePpuCore()
-    : m_ptrObj(nullptr)
+BasePpuCore::BasePpuCore(
+        NesManager^ manNes)
 {
 }
 
