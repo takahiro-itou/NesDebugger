@@ -25,8 +25,6 @@
 #endif
 
 
-using namespace System;
-
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
 namespace  NesMan  {
@@ -34,7 +32,15 @@ class   Nesmanager;
 }   //  End of namespace  NesMan
 }   //  End of namespace  NesDbg
 
+using namespace System;
+
 namespace  NesDbgWrap  {
+
+//  クラスの前方宣言。  //
+namespace  Images  {
+ref  class  FullColorImage;
+}   //  End of namespace  Images
+
 namespace  NesMan  {
 
 //  クラスの前方宣言。  //
@@ -120,6 +126,13 @@ public:
 //
 //    Properties.
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   イメージオブジェクト。
+    **
+    **/
+    property    Images::FullColorImage^     targetImage;
 
 //========================================================================
 //

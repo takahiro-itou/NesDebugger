@@ -22,6 +22,7 @@ public partial class GameScreen : UserControl
     public GameScreen()
     {
         InitializeComponent();
+        initializeScreenImage(256, 240);
     }
 
     //----------------------------------------------------------------
@@ -56,7 +57,7 @@ public partial class GameScreen : UserControl
 
         hDisplayDC = WinAPI.GetDC(IntPtr.Zero);
 
-        imgBuffer = new System.Drawing.Bitmap(200, 100);
+        imgBuffer = new System.Drawing.Bitmap(256, 240);
         grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
 
         colorBG = System.Drawing.Color.FromArgb(0xFF, 0xFE, 0xF0, 0xBA);
@@ -64,10 +65,10 @@ public partial class GameScreen : UserControl
         grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
 
         hDC = grpBuffer.GetHdc();
-        if ( m_image == null ) {
-            m_image = m_bitmapRenderer.createImage(hDC, 200, 100);
+        if ( m_screenImage == null ) {
+            m_screenImage = m_bitmapRenderer.createImage(hDC, 200, 100);
         }
-        m_image.drawSample();
+        m_screenImage.drawSample();
         m_bitmapRenderer.drawImage(hDC, 0, 0, 200, 100, 0, 0);
         grpBuffer.ReleaseHdc(hDC);
 
@@ -96,6 +97,29 @@ public partial class GameScreen : UserControl
         grpCanvas.Dispose();
 
         picView.Image = imgCanvas;
+    }
+
+    //----------------------------------------------------------------
+    /**   画面を初期化する。
+    **
+    **/
+    public virtual System.Boolean
+    initializeScreenImage(int W, int H)
+    {
+        IntPtr  hDC;
+        System.Drawing.Graphics grpBuffer;
+
+        m_imgBuffer = new System.Drawing.Bitmap(W, H);
+        grpBuffer = System.Drawing.Graphics.FromImage(m_imgBuffer);
+
+        hDC = grpBuffer.GetHdc();
+        if ( m_screenImage == null ) {
+            m_screenImage = m_bitmapRenderer.createImage(hDC, W, H);
+        }
+        grpBuffer.ReleaseHdc(hDC);
+        grpBuffer.Dispose();
+
+        return true;
     }
 
     //----------------------------------------------------------------
@@ -167,9 +191,23 @@ public partial class GameScreen : UserControl
         OnRunButtonClick(e);
     }
 
-    private NesDbgWrap.Images.FullColorImage?   m_image;
+
+//========================================================================
+//
+//    Member Variables.
+//
+
+    /**   イメージレンダラ。    **/
     private NesDbgWrap.Images.BitmapRenderer    m_bitmapRenderer
         = new NesDbgWrap.Images.BitmapRenderer();
+
+    /**   PPU マネージャ。      **/
+    private NesDbgWrap.NesMan.BasePpuCore?      m_wManPpu;
+
+    /**   イメージ用バッファ。  **/
+    System.Drawing.Bitmap?                      m_imgBuffer;
+
+    private NesDbgWrap.Images.FullColorImage?   m_screenImage;
 
     private System.Drawing.Color    m_marginColor;
 
