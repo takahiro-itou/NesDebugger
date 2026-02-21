@@ -50,8 +50,29 @@ Partial Class MainView
         ' mnuFile
         '
         resources.ApplyResources(mnuFile, "mnuFile")
-        mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
-        mnuFile.Name = "mnuFilem"
+        mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileOpen,
+            mnuFileClose, mnuFileRecent, mnuFileSep0, mnuFileExit})
+        mnuFile.Name = "mnuFile"
+        '
+        ' mnuFileOpen
+        '
+        mnuFileOpen.Name = "mnuFileOpen"
+        resources.ApplyResources(mnuFileOpen, "mnuFileOpen")
+        '
+        ' mnuFileClose
+        '
+        mnuFileClose.Name = "mnuFileClose"
+        resources.ApplyResources(mnuFileClose, "mnuFileClose")
+        '
+        ' mnuFileRecent
+        '
+        mnuFileRecent.Name = "mnuFileRecent"
+        resources.ApplyResources(mnuFileRecent, "mnuFileRecent")
+        '
+        ' mnuFileSep0
+        '
+        mnuFileSep0.Name = "mnuFileSep0"
+        resources.ApplyResources(mnuFileSep0, "mnuFileSep0")
         '
         ' mnuFileExit
         '

@@ -117,6 +117,19 @@
     <value>&amp;File</value>
   </data>
 
+  <data name="&gt;&gt;mnuFileClose.Name" xml:space="preserve">
+    <value>mnuFileClose</value>
+  </data>
+  <data name="&gt;&gt;mnuFileClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="mnuFileClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+
   <data name="&gt;&gt;mnuFileExit.Name" xml:space="preserve">
     <value>mnuFileExit</value>
   </data>
@@ -124,10 +137,46 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mnuFileExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 22</value>
+    <value>110, 22</value>
   </data>
   <data name="mnuFileExit.Text" xml:space="preserve">
     <value>E&amp;xit</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileOpen.Name" xml:space="preserve">
+    <value>mnuFileOpen</value>
+  </data>
+  <data name="&gt;&gt;mnuFileOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="mnuFileOpen.Text" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileRecent.Name" xml:space="preserve">
+    <value>mnuFileRecent</value>
+  </data>
+  <data name="&gt;&gt;mnuFileRecent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileRecent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="mnuFileRecent.Text" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileSep0.Name" xml:space="preserve">
+    <value>mnuFileSep0</value>
+  </data>
+  <data name="&gt;&gt;mnuFileSep0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileSep0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 6</value>
   </data>
 
   <metadata name="mnuMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -178,7 +227,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mnuRunCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="mnuRunCount.Text" xml:space="preserve">
     <value>&amp;Count</value>
