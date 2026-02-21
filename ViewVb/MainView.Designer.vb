@@ -36,7 +36,7 @@ Partial Class MainView
         mnuRunCount = New ToolStripMenuItem()
 
         picGame = New PictureBox()
-        OpenFileDialog1 = New OpenFileDialog()
+        dlgOpenFile = New OpenFileDialog()
         SampleControl1 = New WinFormsControl.SampleControl()
         mnuMain.SuspendLayout()
         Me.SuspendLayout()
@@ -91,10 +91,10 @@ Partial Class MainView
         mnuRunCount.Name = "mnuRunCount"
 
         '
-        ' OpenFileDialog1
+        ' dlgOpenFile
         '
-        OpenFileDialog1.FileName = "OpenFileDialog1"
-        resources.ApplyResources(OpenFileDialog1, "OpenFileDialog1")
+        dlgOpenFile.FileName = "dlgOpenFile"
+        resources.ApplyResources(dlgOpenFile, "dlgOpenFile")
 
         '
         ' SampleControl1
@@ -130,6 +130,6 @@ Partial Class MainView
     Friend WithEvents mnuRunCount As ToolStripMenuItem
 
     Friend WithEvents picGame As PictureBox
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents dlgOpenFile As OpenFileDialog
 
 End Class
