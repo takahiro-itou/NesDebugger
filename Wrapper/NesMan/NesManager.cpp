@@ -112,6 +112,7 @@ NesManager::!NesManager()
 
 //----------------------------------------------------------------
 //    ラップ対象オブジェクトを取得する。
+//
 
 NesManager::WrapTarget  *
 NesManager::unmanagedObject::get()

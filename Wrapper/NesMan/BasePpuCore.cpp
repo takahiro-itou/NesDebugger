@@ -119,6 +119,26 @@ BasePpuCore::!BasePpuCore()
 //    Properties.
 //
 
+//----------------------------------------------------------------
+//    イメージオブジェクトを取得する。
+//
+
+Images::FullColorImage^
+NesMan::BasePpuCore::targetImage::get()
+{
+    return ( this->m_wImage );
+}
+
+//----------------------------------------------------------------
+//    イメージオブジェクトを設定する。
+//
+
+void
+NesMan::BasePpuCore::targetImage::set(Images::FullColorImage^ value)
+{
+    this->m_wImage  = value;
+}
+
 //========================================================================
 //
 //    Protected Member Functions.

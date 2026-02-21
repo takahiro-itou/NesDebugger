@@ -132,7 +132,11 @@ public:
     /**   イメージオブジェクト。
     **
     **/
-    property    Images::FullColorImage^     targetImage;
+    property    Images::FullColorImage^     targetImage
+    {
+        Images::FullColorImage^ get();
+        void set(Images::FullColorImage^ value);
+    }
 
 //========================================================================
 //
@@ -155,6 +159,8 @@ private:
     WrapTarget  *   m_ptrObj;
 
     NesManager ^    m_wManNes;
+
+    Images::FullColorImage^     m_wImage;
 
 };
 
