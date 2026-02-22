@@ -61,6 +61,13 @@
 
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
 
+  <data name="mnuFileClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="mnuFileClose.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+
   <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 20</value>
   </data>
@@ -69,10 +76,28 @@
   </data>
 
   <data name="mnuFileExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>161, 22</value>
   </data>
   <data name="mnuFileExit.Text" xml:space="preserve">
     <value>終了 (&amp;X)</value>
+  </data>
+
+  <data name="mnuFileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="mnuFileOpen.Text" xml:space="preserve">
+    <value>開く(&amp;O)</value>
+  </data>
+
+  <data name="mnuFileRecent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="mnuFileRecent.Text" xml:space="preserve">
+    <value>最近使ったファイル</value>
+  </data>
+
+  <data name="mnuFileSep0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 6</value>
   </data>
 
   <data name="mnuRun.Size" type="System.Drawing.Size, System.Drawing">
@@ -83,7 +108,7 @@
   </data>
 
   <data name="mnuRunCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>127, 22</value>
   </data>
   <data name="mnuRunCount.Text" xml:space="preserve">
     <value>カウント (&amp;C)</value>

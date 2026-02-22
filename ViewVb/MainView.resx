@@ -117,6 +117,19 @@
     <value>&amp;File</value>
   </data>
 
+  <data name="&gt;&gt;mnuFileClose.Name" xml:space="preserve">
+    <value>mnuFileClose</value>
+  </data>
+  <data name="&gt;&gt;mnuFileClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="mnuFileClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+
   <data name="&gt;&gt;mnuFileExit.Name" xml:space="preserve">
     <value>mnuFileExit</value>
   </data>
@@ -124,10 +137,46 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mnuFileExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 22</value>
+    <value>110, 22</value>
   </data>
   <data name="mnuFileExit.Text" xml:space="preserve">
     <value>E&amp;xit</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileOpen.Name" xml:space="preserve">
+    <value>mnuFileOpen</value>
+  </data>
+  <data name="&gt;&gt;mnuFileOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="mnuFileOpen.Text" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileRecent.Name" xml:space="preserve">
+    <value>mnuFileRecent</value>
+  </data>
+  <data name="&gt;&gt;mnuFileRecent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileRecent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="mnuFileRecent.Text" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+
+  <data name="&gt;&gt;mnuFileSep0.Name" xml:space="preserve">
+    <value>mnuFileSep0</value>
+  </data>
+  <data name="&gt;&gt;mnuFileSep0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mnuFileSep0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 6</value>
   </data>
 
   <metadata name="mnuMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -178,53 +227,53 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mnuRunCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="mnuRunCount.Text" xml:space="preserve">
     <value>&amp;Count</value>
   </data>
 
-  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="dlgOpenFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
-  <data name="&gt;&gt;OpenFileDialog1.Name" xml:space="preserve">
-    <value>OpenFileDialog1</value>
+  <data name="&gt;&gt;dlgOpenFile.Name" xml:space="preserve">
+    <value>dlgOpenFile</value>
   </data>
-  <data name="&gt;&gt;OpenFileDialog1.Type" xml:space="preserve">
+  <data name="&gt;&gt;dlgOpenFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
-  <data name="&gt;&gt;SampleControl1.Name" xml:space="preserve">
-    <value>SampleControl1</value>
+  <data name="&gt;&gt;wfcGameView.Name" xml:space="preserve">
+    <value>wfcGameView</value>
   </data>
-  <data name="&gt;&gt;SampleControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;wfcGameView.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SampleControl1.Type" xml:space="preserve">
-    <value>WinFormsControl.SampleControl, WinFormsControl, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;wfcGameView.Type" xml:space="preserve">
+    <value>WinFormsControl.GameScreen, WinFormsControl, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;SampleControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;wfcGameView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="SampleControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="wfcGameView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="SampleControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="wfcGameView.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
   </data>
-  <data name="SampleControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="wfcGameView.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
   </data>
-  <data name="SampleControl1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="wfcGameView.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="SampleControl1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="wfcGameView.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>300, 280</value>
   </data>
-  <data name="SampleControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="wfcGameView.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 280</value>
   </data>
-  <data name="SampleControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="wfcGameView.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
 

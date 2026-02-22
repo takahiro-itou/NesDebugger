@@ -1,6 +1,6 @@
 ﻿namespace WinFormsControl
 {
-    partial class SampleControl
+    partial class GameScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(SampleControl));
+                new System.ComponentModel.ComponentResourceManager(typeof(GameScreen));
             picView = new PictureBox();
             btnRun = new Button();
             btnClear = new Button();
@@ -56,14 +56,14 @@
             picView.Name = "picView";
             picView.TabStop = false;
             //
-            // SampleControl
+            // GameScreen
             //
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(picView);
             this.Controls.Add(btnRun);
             this.Controls.Add(btnClear);
             resources.ApplyResources(this, "$this");
-            this.Name = "SampleControl";
+            this.Name = "GameScreen";
             ((System.ComponentModel.ISupportInitialize)picView).EndInit();
             this.PerformLayout();
         }

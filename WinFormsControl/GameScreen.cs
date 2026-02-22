@@ -17,11 +17,12 @@ using System.ComponentModel;
 namespace WinFormsControl
 {
 
-public partial class SampleControl : UserControl
+public partial class GameScreen : UserControl
 {
-    public SampleControl()
+    public GameScreen()
     {
         InitializeComponent();
+        initializeScreenImage(256, 240);
     }
 
     //----------------------------------------------------------------
@@ -46,56 +47,61 @@ public partial class SampleControl : UserControl
     /**   デフォルトの描画処理を行う。
     **
     **/
-    public virtual void drawGraphics()
+    public virtual void drawScreen()
     {
-        System.Drawing.Bitmap   imgCanvas, imgBuffer;
-        System.Drawing.Graphics grpCanvas, grpBuffer;
-        IntPtr  hDisplayDC, hDC;
+        System.Drawing.Bitmap   imgCanvas;
+        System.Drawing.Graphics grpCanvas;
+        IntPtr  hDC;
         System.Drawing.Brush    brushBG;
         System.Drawing.Color    colorBG;
 
-        hDisplayDC = WinAPI.GetDC(IntPtr.Zero);
-
-        imgBuffer = new System.Drawing.Bitmap(200, 100);
-        grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer);
-
-        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xFE, 0xF0, 0xBA);
-        brushBG = new System.Drawing.SolidBrush(colorBG);
-        grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds);
-
-        hDC = grpBuffer.GetHdc();
-        if ( m_image == null ) {
-            m_image = m_bitmapRenderer.createImage(hDC, 200, 100);
-        }
-        m_image.drawSample();
-        m_bitmapRenderer.drawImage(hDC, 0, 0, 200, 100, 0, 0);
-        grpBuffer.ReleaseHdc(hDC);
-
-        grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
-        grpBuffer.DrawRectangle(Pens.Yellow, 50, 30, 100, 60);
-        grpBuffer.Dispose();
+        this.m_wManPpu.drawScreen()
 
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
 
-        colorBG = System.Drawing.Color.FromArgb(0xFF, 0xFF, 0x00, 0x00);
+        colorBG = System.Drawing.Color.FromArgb(0xFF, 0x00, 0x00, 0xFF);
         brushBG = new System.Drawing.SolidBrush(colorBG);
         grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds);
 
         hDC = grpCanvas.GetHdc();
-        WinAPI.BitBlt(hDC, 8, 8, 284, 284, hDisplayDC, 0, 0, WinAPI.SRCCOPY);
+        m_bitmapRenderer.drawImage(hDC, 0, 0, 256, 240, 0, 0);
         grpCanvas.ReleaseHdc(hDC);
-
-        WinAPI.ReleaseDC(IntPtr.Zero, hDisplayDC);
-
-        colorBG = System.Drawing.Color.FromArgb(0x40, 0x00, 0xFF, 0x00);
-        brushBG = new System.Drawing.SolidBrush(colorBG);
-        grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds);
-
-        grpCanvas.DrawImage(imgBuffer, 50, 100, 200, 100);
         grpCanvas.Dispose();
 
         picView.Image = imgCanvas;
+    }
+
+    //----------------------------------------------------------------
+    /**   画面を初期化する。
+    **
+    **/
+    public virtual System.Boolean
+    initializeScreenImage(int W, int H)
+    {
+        IntPtr  hDC;
+        System.Drawing.Graphics grpBuffer;
+
+        m_imgBuffer = new System.Drawing.Bitmap(W, H);
+        grpBuffer = System.Drawing.Graphics.FromImage(m_imgBuffer);
+
+        hDC = grpBuffer.GetHdc();
+        if ( m_screenImage == null ) {
+            m_screenImage = m_bitmapRenderer.createImage(hDC, W, H);
+        }
+        grpBuffer.ReleaseHdc(hDC);
+        grpBuffer.Dispose();
+
+        return true;
+    }
+
+    public virtual System.Boolean
+    setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
+    {
+        manPpu.TargetImage  = this.m_screenImage;
+        this.m_wManPpu  = manPpu;
+
+        return true;
     }
 
     //----------------------------------------------------------------
@@ -167,12 +173,26 @@ public partial class SampleControl : UserControl
         OnRunButtonClick(e);
     }
 
-    private NesDbgWrap.Images.FullColorImage?   m_image;
+
+//========================================================================
+//
+//    Member Variables.
+//
+
+    /**   イメージレンダラ。    **/
     private NesDbgWrap.Images.BitmapRenderer    m_bitmapRenderer
         = new NesDbgWrap.Images.BitmapRenderer();
 
+    /**   PPU マネージャ。      **/
+    private NesDbgWrap.NesMan.BasePpuCore?      m_wManPpu;
+
+    /**   イメージ用バッファ。  **/
+    System.Drawing.Bitmap?                      m_imgBuffer;
+
+    private NesDbgWrap.Images.FullColorImage?   m_screenImage;
+
     private System.Drawing.Color    m_marginColor;
 
-}   //  End of class SampleControl
+}   //  End of class GameScreen
 
 }   //  End of namespace WinFormsControl

@@ -13,18 +13,18 @@
 *************************************************************************/
 
 /**
-**      An Implementation of FullColorImage class.
+**      An Implementation of NesManager class.
 **
-**      @file       Images/FullColorImage.cpp
+**      @file       Images/NesManager.cpp
 **/
 
 #include    "PreCompile.h"
 
-#include    "FullColorImage.h"
+#include    "NesManager.h"
 
 
 namespace  NesDbgWrap  {
-namespace  Images  {
+namespace  NesMan  {
 
 namespace  {
 
@@ -33,7 +33,7 @@ namespace  {
 
 //========================================================================
 //
-//    FullColorImage  class.
+//    NesManager  class.
 //
 
 //========================================================================
@@ -46,7 +46,7 @@ namespace  {
 //  （デフォルトコンストラクタ）。
 //
 
-FullColorImage::FullColorImage()
+NesManager::NesManager()
     : m_ptrObj(new WrapTarget())
 {
 }
@@ -56,12 +56,12 @@ FullColorImage::FullColorImage()
 //  （デストラクタ）。
 //
 
-FullColorImage::~FullColorImage()
+NesManager::~NesManager()
 {
     //  マネージドリソースを破棄する。              //
 
     //  続いて、アンマネージドリソースも破棄する。  //
-    this->!FullColorImage();
+    this->!NesManager();
 }
 
 //----------------------------------------------------------------
@@ -69,7 +69,7 @@ FullColorImage::~FullColorImage()
 //  （ファイナライザ）。
 //
 
-FullColorImage::!FullColorImage()
+NesManager::!NesManager()
 {
     delete  this->m_ptrObj;
     this->m_ptrObj  = nullptr;
@@ -95,52 +95,10 @@ FullColorImage::!FullColorImage()
 //    Public Member Functions (Virtual Functions).
 //
 
-//----------------------------------------------------------------
-//    イメージを作成する。
-//
-
-void
-FullColorImage::createImage(
-        const  int  nWidth,
-        const  int  nHeight,
-        const  int  cbPixel,
-        const  int  lStride,
-        void  *     lpBits)
-{
-    return  this->m_ptrObj->createImage(
-                nWidth, nHeight, cbPixel, lStride, lpBits
-    );
-}
-
-//----------------------------------------------------------------
-//    サンプル画像を描画する。
-//
-
-void
-FullColorImage::drawSample()
-{
-    return  this->m_ptrObj->drawSample();
-}
-
 //========================================================================
 //
 //    Public Member Functions.
 //
-
-//----------------------------------------------------------------
-//    矩形を描画する。
-//
-
-void
-FullColorImage::fillRectangle(
-        const  int  x1,
-        const  int  y1,
-        const  int  x2,
-        const  int  y2,
-        const  int  color)
-{
-    return  this->m_ptrObj->fillRectangle(x1, y1, x2, y2, color);
-}
 
 //========================================================================
 //
@@ -156,8 +114,8 @@ FullColorImage::fillRectangle(
 //    ラップ対象オブジェクトを取得する。
 //
 
-FullColorImage::WrapTarget  *
-FullColorImage::UnmanagedObject::get()
+NesManager::WrapTarget  *
+NesManager::unmanagedObject::get()
 {
     return ( this->m_ptrObj );
 }
@@ -172,5 +130,5 @@ FullColorImage::UnmanagedObject::get()
 //    For Internal Use Only.
 //
 
-}   //  End of namespace  Common
+}   //  End of namespace  NesMan
 }   //  End of namespace  NesDbgWrap

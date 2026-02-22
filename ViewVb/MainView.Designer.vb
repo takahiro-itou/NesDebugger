@@ -27,12 +27,16 @@ Partial Class MainView
 
         mnuMain = New MenuStrip()
         mnuFile = New ToolStripMenuItem()
+        mnuFileOpen = New ToolStripMenuItem()
+        mnuFileClose = New ToolStripMenuItem()
+        mnuFileRecent = New ToolStripMenuItem()
+        mnuFileSep0 = New ToolStripSeparator
         mnuFileExit = New ToolStripMenuItem()
         mnuRun = New ToolStripMenuItem()
         mnuRunCount = New ToolStripMenuItem()
 
-        OpenFileDialog1 = New OpenFileDialog()
-        SampleControl1 = New WinFormsControl.SampleControl()
+        dlgOpenFile = New OpenFileDialog()
+        wfcGameView = New WinFormsControl.GameScreen()
         mnuMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,8 +49,29 @@ Partial Class MainView
         ' mnuFile
         '
         resources.ApplyResources(mnuFile, "mnuFile")
-        mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
-        mnuFile.Name = "mnuFilem"
+        mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileOpen,
+            mnuFileClose, mnuFileRecent, mnuFileSep0, mnuFileExit})
+        mnuFile.Name = "mnuFile"
+        '
+        ' mnuFileOpen
+        '
+        mnuFileOpen.Name = "mnuFileOpen"
+        resources.ApplyResources(mnuFileOpen, "mnuFileOpen")
+        '
+        ' mnuFileClose
+        '
+        mnuFileClose.Name = "mnuFileClose"
+        resources.ApplyResources(mnuFileClose, "mnuFileClose")
+        '
+        ' mnuFileRecent
+        '
+        mnuFileRecent.Name = "mnuFileRecent"
+        resources.ApplyResources(mnuFileRecent, "mnuFileRecent")
+        '
+        ' mnuFileSep0
+        '
+        mnuFileSep0.Name = "mnuFileSep0"
+        resources.ApplyResources(mnuFileSep0, "mnuFileSep0")
         '
         ' mnuFileExit
         '
@@ -65,23 +90,23 @@ Partial Class MainView
         mnuRunCount.Name = "mnuRunCount"
 
         '
-        ' OpenFileDialog1
+        ' dlgOpenFile
         '
-        OpenFileDialog1.FileName = "OpenFileDialog1"
-        resources.ApplyResources(OpenFileDialog1, "OpenFileDialog1")
+        dlgOpenFile.FileName = "dlgOpenFile"
+        resources.ApplyResources(dlgOpenFile, "dlgOpenFile")
 
         '
-        ' SampleControl1
+        ' wfcGameView
         '
-        resources.ApplyResources(SampleControl1, "SampleControl1")
-        SampleControl1.Name = "SampleControl1"
+        resources.ApplyResources(wfcGameView, "wfcGameView")
+        wfcGameView.Name = "wfcGameView"
 
         '
         ' MainView
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = AutoScaleMode.None
-        Me.Controls.Add(SampleControl1)
+        Me.Controls.Add(wfcGameView)
         Me.Controls.Add(mnuMain)
         Me.MainMenuStrip = Me.mnuMain
         Me.Name = "MainView"
@@ -92,12 +117,17 @@ Partial Class MainView
 
     End Sub
 
-    Friend WithEvents SampleControl1 As WinFormsControl.SampleControl
+    Friend WithEvents wfcGameView As WinFormsControl.GameScreen
     Friend WithEvents mnuMain As MenuStrip
     Friend WithEvents mnuFile As ToolStripMenuItem
+    Friend WithEvents mnuFileClose As ToolStripMenuItem
     Friend WithEvents mnuFileExit As ToolStripMenuItem
+    Friend WithEvents mnuFileOpen As ToolStripMenuItem
+    Friend WithEvents mnuFileSep0 As ToolStripSeparator
+    Friend WithEvents mnuFileRecent As ToolStripMenuItem
     Friend WithEvents mnuRun As ToolStripMenuItem
     Friend WithEvents mnuRunCount As ToolStripMenuItem
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+
+    Friend WithEvents dlgOpenFile As OpenFileDialog
 
 End Class
