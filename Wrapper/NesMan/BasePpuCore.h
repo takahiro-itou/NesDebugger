@@ -13,27 +13,45 @@
 *************************************************************************/
 
 /**
-**      An Interface of FullColorImage class.
+**      An Interface of BasePpuCore class.
 **
-**      @file       Images/FullColorImage.h
+**      @file       NesMan/BasePpuCore.h
 **/
 
 #pragma once
 
-#include    "NesDbg/Images/FullColorImage.h"
+#if !defined( NESDBG_NESMAN_INCLUDED_BASE_PPU_CORE_H )
+#    include    "NesDbg/NesMan/BasePpuCore.h"
+#endif
 
+
+//  クラスの前方宣言。  //
+namespace  NesDbg  {
+namespace  NesMan  {
+class   Nesmanager;
+}   //  End of namespace  NesMan
+}   //  End of namespace  NesDbg
 
 using namespace System;
 
 namespace  NesDbgWrap  {
+
+//  クラスの前方宣言。  //
 namespace  Images  {
+ref  class  FullColorImage;
+}   //  End of namespace  Images
+
+namespace  NesMan  {
+
+//  クラスの前方宣言。  //
+ref  class  NesManager;
 
 //========================================================================
 //
-//    FullColorImage  class.
+//    BasePpuCore  class.
 //
 
-public ref  class  FullColorImage
+public ref  class  BasePpuCore
 {
 
 //========================================================================
@@ -42,7 +60,9 @@ public ref  class  FullColorImage
 //
 private:
 
-    typedef     NesDbg::Images::FullColorImage  WrapTarget;
+    typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
+
+    typedef     NesDbg::NesMan::NesManager      WrapNesMan;
 
 //========================================================================
 //
@@ -52,24 +72,25 @@ public:
 
     //----------------------------------------------------------------
     /**   インスタンスを初期化する
-    **  （デフォルトコンストラクタ）。
+    **  （コンストラクタ）。
     **
     **/
-    FullColorImage();
+    BasePpuCore(
+            NesManager^ manNes);
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （デストラクタ）。
     **
     **/
-    virtual  ~FullColorImage();
+    virtual  ~BasePpuCore();
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （ファイナライザ）。
     **
     **/
-    !FullColorImage();
+    !BasePpuCore();
 
 //========================================================================
 //
@@ -93,46 +114,16 @@ public:
 public:
 
     //----------------------------------------------------------------
-    /**   イメージを作成する。
-    **
-    **  @param [in] nWidth    イメージの幅
-    **  @param [in] nHeight   イメージの高さ
-    **  @param [in] cbPixel   ピクセル当たりのバイト数。
-    **  @param [in] lStride   行当たりのバイト数。
-    **  @param [in] lpBits    イメージデータ。
-    **/
-    virtual  void
-    createImage(
-            const  int  nWidth,
-            const  int  nHeight,
-            const  int  cbPixel,
-            const  int  lStride,
-            void  *     lpBits);
-
-    //----------------------------------------------------------------
-    /**   サンプル画像を描画する。
+    /**   画面を描画する。
     **
     **/
     virtual  void
-    drawSample();
+    drawScreen();
 
 //========================================================================
 //
 //    Public Member Functions.
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   矩形を描画する。
-    **
-    **/
-    void
-    fillRectangle(
-            const  int  x1,
-            const  int  y1,
-            const  int  x2,
-            const  int  y2,
-            const  int  color);
 
 //========================================================================
 //
@@ -146,13 +137,13 @@ public:
 public:
 
     //----------------------------------------------------------------
-    /**   ラップ対象オブジェクトを取得する。
+    /**   イメージオブジェクト。
     **
     **/
-    property    WrapTarget  *
-    UnmanagedObject
+    property    Images::FullColorImage^     TargetImage
     {
-        WrapTarget *    get();
+        Images::FullColorImage^ get();
+        void set(Images::FullColorImage^ value);
     }
 
 //========================================================================
@@ -171,8 +162,15 @@ public:
 //
 private:
 
+    WrapNesMan  *   m_pManNes;
+
     WrapTarget  *   m_ptrObj;
+
+    NesManager ^    m_wManNes;
+
+    Images::FullColorImage^     m_wImage;
+
 };
 
-}   //  End of namespace  Common
+}   //  End of namespace  NesMan
 }   //  End of namespace  NesDbgWrap

@@ -67,7 +67,7 @@
     <value>True</value>
   </metadata>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SampleControl</value>
+    <value>GameScreen</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

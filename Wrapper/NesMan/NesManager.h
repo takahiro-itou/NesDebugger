@@ -13,35 +13,36 @@
 *************************************************************************/
 
 /**
-**      An Interface of SampleDocument class.
+**      An Interface of NesManager class.
 **
-**      @file       Wrapper.h
+**      @file       NesMan/NesManager.h
 **/
 
 #pragma once
 
-#if !defined( NESDBG_COMMON_INCLUDED_SAMPLE_DOCUMENT_H )
-#    include    "NesDbg/Common/SampleDocument.h"
-#endif
+#include    "NesDbg/NesMan/NesManager.h"
 
 
 using namespace System;
 
 namespace  NesDbgWrap  {
-namespace  Common  {
+namespace  NesMan  {
 
 //========================================================================
 //
-//    SampleDocument  class.
+//    NesManager  class.
 //
 
-public ref  class  SampleDocument
+public ref  class  NesManager
 {
 
 //========================================================================
 //
 //    Internal Type Definitions.
 //
+private:
+
+    typedef     NesDbg::NesMan::NesManager      WrapTarget;
 
 //========================================================================
 //
@@ -54,21 +55,21 @@ public:
     **  （デフォルトコンストラクタ）。
     **
     **/
-    SampleDocument();
+    NesManager();
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （デストラクタ）。
     **
     **/
-    virtual  ~SampleDocument();
+    virtual  ~NesManager();
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （ファイナライザ）。
     **
     **/
-    !SampleDocument();
+    !NesManager();
 
 //========================================================================
 //
@@ -94,32 +95,27 @@ public:
 //
 //    Public Member Functions.
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   入力メッセージ中に含まれるアルファベットを数える。
-    **
-    **  @param [in] message   入力データ
-    **  @return     半角アルファベット [A-Za-z] の文字数
-    **/
-    int
-    countAlphabet();
 
 //========================================================================
 //
 //    Accessors.
 //
+
+//========================================================================
+//
+//    Properties.
+//
 public:
 
     //----------------------------------------------------------------
-    /**   メッセージを設定する。
+    /**   ラップ対象オブジェクトを取得する。
     **
-    **  @param [in] message   入力データ
-    **  @return     void.
     **/
-    void
-    setMessage(
-            System::String^ message);
+    property    WrapTarget  *
+    unmanagedObject
+    {
+        WrapTarget *    get();
+    }
 
 //========================================================================
 //
@@ -137,10 +133,8 @@ public:
 //
 private:
 
-    typedef     NesDbg::Common::SampleDocument  WrapTarget;
-
     WrapTarget  *   m_ptrObj;
 };
 
-}   //  End of namespace  Common
-}   //  End of namespace  SampleWrap
+}   //  End of namespace  NesMan
+}   //  End of namespace  NesDbgWrap
