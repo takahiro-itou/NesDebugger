@@ -55,7 +55,7 @@ public partial class GameScreen : UserControl
         System.Drawing.Brush    brushBG;
         System.Drawing.Color    colorBG;
 
-        this.m_wManPpu.drawScreen()
+        this.m_wManPpu.drawScreen();
 
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
