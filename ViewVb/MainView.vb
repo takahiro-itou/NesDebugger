@@ -10,15 +10,16 @@ Private Function initializeScreen(
 ''--------------------------------------------------------------------
     Me.wfcGameView.initializeScreenImage(w, h)
     Me.wfcGameView.setupPpuManager(Me.m_manPpu)
-    showGraphics()
+    showGameScreen()
     Return True
 End Function
 
-Private Sub showGraphics()
+Private Sub showGameScreen()
 ''--------------------------------------------------------------------
 ''    画像を表示する
 ''--------------------------------------------------------------------
     Me.wfcGameView.drawScreen()
+    Me.wfcGameView.showScreen()
 End Sub
 
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
@@ -43,7 +44,7 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''    メニュー「実行」－「カウント」
 ''--------------------------------------------------------------------
     System.Threading.Thread.Sleep(100)
-    showGraphics()
+    showGameScreen()
 End Sub
 
 End Class

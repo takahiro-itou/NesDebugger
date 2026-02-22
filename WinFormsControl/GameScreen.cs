@@ -49,13 +49,20 @@ public partial class GameScreen : UserControl
     **/
     public virtual void drawScreen()
     {
+        this.m_wManPpu.drawScreen();
+    }
+
+    //----------------------------------------------------------------
+    /**   デフォルトの描画処理を行う。
+    **
+    **/
+    public virtual void showScreen()
+    {
         System.Drawing.Bitmap   imgCanvas;
         System.Drawing.Graphics grpCanvas;
         IntPtr  hDC;
         System.Drawing.Brush    brushBG;
         System.Drawing.Color    colorBG;
-
-        this.m_wManPpu.drawScreen();
 
         imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
