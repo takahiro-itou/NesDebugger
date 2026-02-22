@@ -25,6 +25,7 @@
 #include    "../Images/FullColorImage.h"
 
 #include    "NesDbg/NesMan/NesManager.h"
+#include    "../../Core/Lib/NesMan/PpuNes/NesPpuImpl.h"
 
 
 namespace  NesDbgWrap  {
