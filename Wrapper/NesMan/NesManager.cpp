@@ -20,6 +20,8 @@
 
 #include    "PreCompile.h"
 
+#include    <msclr/marshal_cppstd.h>
+
 #include    "NesManager.h"
 
 
@@ -94,6 +96,18 @@ NesManager::!NesManager()
 //
 //    Public Member Functions (Virtual Functions).
 //
+
+//----------------------------------------------------------------
+//    ROM ファイルを読み込む。
+//
+
+void
+NesManager::openRomFile(
+        System::String^ fileName)
+{
+    std::string tmp = msclr::interop::marshal_as<std::string>(fileName);
+    this->m_ptrObj->openRomFile(tmp.c_str());
+}
 
 //========================================================================
 //

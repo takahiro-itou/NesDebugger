@@ -27,6 +27,7 @@ Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 ''    フォームのロードイベントハンドラ
 ''--------------------------------------------------------------------
+    Me.m_manNes.openRomFile("hello.nes")
     initializeScreen(256, 240)
 End Sub
 
