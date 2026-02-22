@@ -1,7 +1,7 @@
 ﻿Public Class MainView
 
-Private m_manNes As New NesDbgWrap.NesMan.NesManager
-Private m_manPpu As New NesDbgWrap.NesMan.BasePpuCore(Me.m_manNes)
+Private m_manNes As NesDbgWrap.NesMan.NesManager
+Private m_manPpu As NesDbgWrap.NesMan.BasePpuCore
 
 Private Function initializeScreen(
         ByVal w As Integer, ByVal h As Integer) As Boolean
@@ -18,6 +18,7 @@ Private Sub showGameScreen()
 ''--------------------------------------------------------------------
 ''    画像を表示する
 ''--------------------------------------------------------------------
+    If Me.m_manPpu Is Nothing Then Exit Sub
     Me.wfcGameView.drawScreen()
     Me.wfcGameView.showScreen()
 End Sub
@@ -27,7 +28,10 @@ Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 ''    フォームのロードイベントハンドラ
 ''--------------------------------------------------------------------
+    Me.m_manNes = New NesDbgWrap.NesMan.NesManager
     Me.m_manNes.openRomFile("hello.nes")
+    Me.m_manPpu = New NesDbgWrap.NesMan.BasePpuCore(Me.m_manNes)
+
     initializeScreen(256, 240)
 End Sub
 
