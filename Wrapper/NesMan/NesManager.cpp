@@ -115,7 +115,7 @@ NesManager::!NesManager()
 //
 
 NesManager::WrapTarget  *
-NesManager::unmanagedObject::get()
+NesManager::UnmanagedObject::get()
 {
     return ( this->m_ptrObj );
 }

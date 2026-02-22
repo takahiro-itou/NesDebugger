@@ -112,7 +112,7 @@ public:
     **
     **/
     property    WrapTarget  *
-    unmanagedObject
+    UnmanagedObject
     {
         WrapTarget *    get();
     }
