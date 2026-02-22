@@ -148,7 +148,7 @@ void
 NesMan::BasePpuCore::TargetImage::set(Images::FullColorImage^ value)
 {
     this->m_wImage  = value;
-    this->m_ptrObj->setImageInstance(value->UnmanagedObject);
+    this->m_ptrObj->setScreenImage(value->UnmanagedObject);
 }
 
 //========================================================================
