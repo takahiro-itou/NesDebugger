@@ -53,7 +53,43 @@ public partial class GameScreen : UserControl
     }
 
     //----------------------------------------------------------------
-    /**   デフォルトの描画処理を行う。
+    /**   画面を初期化する。
+    **
+    **/
+    public virtual System.Boolean
+    initializeScreenImage(int W, int H)
+    {
+        IntPtr  hDC;
+        System.Drawing.Graphics grpBuffer;
+
+        m_imgBuffer = new System.Drawing.Bitmap(W, H);
+        grpBuffer = System.Drawing.Graphics.FromImage(m_imgBuffer);
+
+        hDC = grpBuffer.GetHdc();
+        if ( m_screenImage == null ) {
+            m_screenImage = m_bitmapRenderer.createImage(hDC, W, H);
+        }
+        grpBuffer.ReleaseHdc(hDC);
+        grpBuffer.Dispose();
+
+        return true;
+    }
+
+    //----------------------------------------------------------------
+    /**   PPU を設定する。
+    **
+    **/
+    public virtual System.Boolean
+    setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
+    {
+        manPpu.TargetImage  = this.m_screenImage;
+        this.m_wManPpu  = manPpu;
+
+        return true;
+    }
+
+    //----------------------------------------------------------------
+    /**   ゲーム画面を表示する。
     **
     **/
     public virtual void showScreen()
@@ -77,38 +113,6 @@ public partial class GameScreen : UserControl
         grpCanvas.Dispose();
 
         picView.Image = imgCanvas;
-    }
-
-    //----------------------------------------------------------------
-    /**   画面を初期化する。
-    **
-    **/
-    public virtual System.Boolean
-    initializeScreenImage(int W, int H)
-    {
-        IntPtr  hDC;
-        System.Drawing.Graphics grpBuffer;
-
-        m_imgBuffer = new System.Drawing.Bitmap(W, H);
-        grpBuffer = System.Drawing.Graphics.FromImage(m_imgBuffer);
-
-        hDC = grpBuffer.GetHdc();
-        if ( m_screenImage == null ) {
-            m_screenImage = m_bitmapRenderer.createImage(hDC, W, H);
-        }
-        grpBuffer.ReleaseHdc(hDC);
-        grpBuffer.Dispose();
-
-        return true;
-    }
-
-    public virtual System.Boolean
-    setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
-    {
-        manPpu.TargetImage  = this.m_screenImage;
-        this.m_wManPpu  = manPpu;
-
-        return true;
     }
 
     //----------------------------------------------------------------
