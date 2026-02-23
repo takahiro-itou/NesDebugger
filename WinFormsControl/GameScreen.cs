@@ -100,7 +100,7 @@ public partial class GameScreen : UserControl
         System.Drawing.Brush    brushBG;
         System.Drawing.Color    colorBG;
 
-        imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
+        imgCanvas = this.m_imgBuffer;
         grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
 
         colorBG = System.Drawing.Color.FromArgb(0xFF, 0x00, 0x00, 0xFF);
