@@ -28,7 +28,8 @@
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
 namespace  NesMan  {
-class   Nesmanager;
+class   NesManager;
+class   NesPpuImpl;
 }   //  End of namespace  NesMan
 }   //  End of namespace  NesDbg
 
@@ -60,7 +61,8 @@ public ref  class  BasePpuCore
 //
 private:
 
-    typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
+    //  typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
+    typedef     NesDbg::NesMan::NesPpuImpl      WrapTarget;
 
     typedef     NesDbg::NesMan::NesManager      WrapNesMan;
 
