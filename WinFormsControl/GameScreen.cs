@@ -30,7 +30,7 @@ public partial class GameScreen : UserControl
     /**   画像をクリアする。
     **
     **/
-    public virtual void clearGraphics()
+    public virtual void clearScreen()
     {
         System.Drawing.Bitmap   imgCanvas;
         System.Drawing.Graphics grpCanvas;
@@ -172,7 +172,7 @@ public partial class GameScreen : UserControl
     **/
     private void btnClear_Click(object sender, EventArgs e)
     {
-        clearGraphics();
+        clearScreen();
     }
 
     //----------------------------------------------------------------
