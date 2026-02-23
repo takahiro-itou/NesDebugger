@@ -22,6 +22,7 @@ public partial class GameScreen : UserControl
     public GameScreen()
     {
         InitializeComponent();
+        m_imgBuffer = new System.Drawing.Bitmap(256, 240);
         initializeScreenImage(256, 240);
     }
 
@@ -49,7 +50,7 @@ public partial class GameScreen : UserControl
     **/
     public virtual void drawScreen()
     {
-        this.m_wManPpu.drawScreen();
+        this.m_wManPpu?.drawScreen();
     }
 
     //----------------------------------------------------------------
@@ -198,7 +199,7 @@ public partial class GameScreen : UserControl
     private NesDbgWrap.NesMan.BasePpuCore?      m_wManPpu;
 
     /**   イメージ用バッファ。  **/
-    System.Drawing.Bitmap?                      m_imgBuffer;
+    System.Drawing.Bitmap                       m_imgBuffer;
 
     private NesDbgWrap.Images.FullColorImage?   m_screenImage;
 
