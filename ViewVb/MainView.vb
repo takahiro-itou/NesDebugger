@@ -23,7 +23,7 @@ Private Sub showGameScreen()
 ''--------------------------------------------------------------------
 ''    画像を表示する
 ''--------------------------------------------------------------------
-    If isInitialized() Then Exit Sub
+    If Not isInitialized() Then Exit Sub
     Me.wfcGameView.drawScreen()
     Me.wfcGameView.showScreen()
 End Sub
