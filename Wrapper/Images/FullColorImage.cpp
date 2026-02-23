@@ -112,16 +112,6 @@ FullColorImage::createImage(
     );
 }
 
-//----------------------------------------------------------------
-//    サンプル画像を描画する。
-//
-
-void
-FullColorImage::drawSample()
-{
-    return  this->m_ptrObj->drawSample();
-}
-
 //========================================================================
 //
 //    Public Member Functions.

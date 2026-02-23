@@ -25,6 +25,7 @@
 #include    "../Images/FullColorImage.h"
 
 #include    "NesDbg/NesMan/NesManager.h"
+#include    "../../Core/Lib/NesMan/PpuNes/NesPpuImpl.h"
 
 
 namespace  NesDbgWrap  {
@@ -52,7 +53,7 @@ namespace  {
 
 BasePpuCore::BasePpuCore(
         NesManager^ manNes)
-    : m_pManNes(manNes->unmanagedObject),
+    : m_pManNes(manNes->UnmanagedObject),
       m_ptrObj(new WrapTarget(*m_pManNes, m_pManNes->getMemoryManager())),
       m_wManNes(manNes)
 {
@@ -148,7 +149,7 @@ void
 NesMan::BasePpuCore::TargetImage::set(Images::FullColorImage^ value)
 {
     this->m_wImage  = value;
-    this->m_ptrObj->setImageInstance(value->UnmanagedObject);
+    this->m_ptrObj->setScreenImage(value->UnmanagedObject);
 }
 
 //========================================================================
