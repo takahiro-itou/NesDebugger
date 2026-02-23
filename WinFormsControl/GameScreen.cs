@@ -63,7 +63,6 @@ public partial class GameScreen : UserControl
         IntPtr  hDC;
         System.Drawing.Graphics grpBuffer;
 
-        m_imgBuffer = new System.Drawing.Bitmap(W, H);
         grpBuffer = System.Drawing.Graphics.FromImage(m_imgBuffer);
 
         hDC = grpBuffer.GetHdc();
@@ -83,10 +82,13 @@ public partial class GameScreen : UserControl
     public virtual System.Boolean
     setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
     {
+        if ( this.m_screenImage == null ) {
+            return  false;
+        }
         manPpu.TargetImage  = this.m_screenImage;
         this.m_wManPpu  = manPpu;
 
-        return true;
+        return  true;
     }
 
     //----------------------------------------------------------------

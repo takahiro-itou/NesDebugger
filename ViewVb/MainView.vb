@@ -4,6 +4,9 @@ Private m_manNes As NesDbgWrap.NesMan.NesManager
 Private m_manPpu As NesDbgWrap.NesMan.BasePpuCore
 
 Private Function isInitialized() As Boolean
+''--------------------------------------------------------------------
+''    初期化が完了しているか否かを返す。
+''--------------------------------------------------------------------
     If (Me.m_manPpu Is Nothing) Then Return False
     Return True
 End Function
