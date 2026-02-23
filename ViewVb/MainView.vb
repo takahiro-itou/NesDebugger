@@ -3,6 +3,11 @@
 Private m_manNes As NesDbgWrap.NesMan.NesManager
 Private m_manPpu As NesDbgWrap.NesMan.BasePpuCore
 
+Private Function isInitialized() As Boolean
+    If (Me.m_manPpu Is Nothing) Then Return False
+    Return True
+End Function
+
 Private Function initializeScreen(
         ByVal w As Integer, ByVal h As Integer) As Boolean
 ''--------------------------------------------------------------------
@@ -18,7 +23,7 @@ Private Sub showGameScreen()
 ''--------------------------------------------------------------------
 ''    画像を表示する
 ''--------------------------------------------------------------------
-    If Me.m_manPpu Is Nothing Then Exit Sub
+    If isInitialized() Then Exit Sub
     Me.wfcGameView.drawScreen()
     Me.wfcGameView.showScreen()
 End Sub
