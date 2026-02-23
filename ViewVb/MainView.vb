@@ -31,7 +31,7 @@ Private Function openRomFile(ByVal fileName As String) As Boolean
     Me.m_manNes.openRomFile(fileName)
 
     Me.m_manPpu = New NesDbgWrap.NesMan.BasePpuCore(Me.m_manNes)
-    initializeScreen(256, 240)
+    initializeScreen(512, 480)
 
     openRomFile = True
 End Function
