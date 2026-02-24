@@ -31,24 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources =
                 new System.ComponentModel.ComponentResourceManager(typeof(GameScreen));
             picView = new PictureBox();
-            btnRun = new Button();
-            btnClear = new Button();
             ((System.ComponentModel.ISupportInitialize)picView).BeginInit();
             this.SuspendLayout();
-            //
-            // btnRun
-            //
-            resources.ApplyResources(btnRun, "btnRun");
-            btnRun.Name = "btnRun";
-            btnRun.UseVisualStyleBackColor = true;
-            btnRun.Click += btnRun_Click;
-            //
-            // btnClear
-            //
-            resources.ApplyResources(btnClear, "btnClear");
-            btnClear.Name = "btnClear";
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
             //
             // picView
             //
@@ -60,8 +44,6 @@
             //
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(picView);
-            this.Controls.Add(btnRun);
-            this.Controls.Add(btnClear);
             resources.ApplyResources(this, "$this");
             this.Name = "GameScreen";
             ((System.ComponentModel.ISupportInitialize)picView).EndInit();
@@ -71,7 +53,5 @@
         #endregion
 
         private PictureBox picView;
-        private Button btnRun;
-        private Button btnClear;
     }
 }

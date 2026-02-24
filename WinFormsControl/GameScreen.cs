@@ -22,14 +22,14 @@ public partial class GameScreen : UserControl
     public GameScreen()
     {
         InitializeComponent();
-        initializeScreenImage(256, 240);
+        m_imgBuffer = new System.Drawing.Bitmap(512, 480);
     }
 
     //----------------------------------------------------------------
     /**   画像をクリアする。
     **
     **/
-    public virtual void clearGraphics()
+    public virtual void clearScreen()
     {
         System.Drawing.Bitmap   imgCanvas;
         System.Drawing.Graphics grpCanvas;
@@ -49,34 +49,7 @@ public partial class GameScreen : UserControl
     **/
     public virtual void drawScreen()
     {
-        this.m_wManPpu.drawScreen();
-    }
-
-    //----------------------------------------------------------------
-    /**   デフォルトの描画処理を行う。
-    **
-    **/
-    public virtual void showScreen()
-    {
-        System.Drawing.Bitmap   imgCanvas;
-        System.Drawing.Graphics grpCanvas;
-        IntPtr  hDC;
-        System.Drawing.Brush    brushBG;
-        System.Drawing.Color    colorBG;
-
-        imgCanvas = new System.Drawing.Bitmap(picView.Width, picView.Height);
-        grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
-
-        colorBG = System.Drawing.Color.FromArgb(0xFF, 0x00, 0x00, 0xFF);
-        brushBG = new System.Drawing.SolidBrush(colorBG);
-        grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds);
-
-        hDC = grpCanvas.GetHdc();
-        m_bitmapRenderer.drawImage(hDC, 0, 0, 256, 240, 0, 0);
-        grpCanvas.ReleaseHdc(hDC);
-        grpCanvas.Dispose();
-
-        picView.Image = imgCanvas;
+        this.m_wManPpu?.drawScreen();
     }
 
     //----------------------------------------------------------------
@@ -89,7 +62,6 @@ public partial class GameScreen : UserControl
         IntPtr  hDC;
         System.Drawing.Graphics grpBuffer;
 
-        m_imgBuffer = new System.Drawing.Bitmap(W, H);
         grpBuffer = System.Drawing.Graphics.FromImage(m_imgBuffer);
 
         hDC = grpBuffer.GetHdc();
@@ -102,13 +74,47 @@ public partial class GameScreen : UserControl
         return true;
     }
 
+    //----------------------------------------------------------------
+    /**   PPU を設定する。
+    **
+    **/
     public virtual System.Boolean
     setupPpuManager(NesDbgWrap.NesMan.BasePpuCore manPpu)
     {
+        if ( this.m_screenImage == null ) {
+            return  false;
+        }
         manPpu.TargetImage  = this.m_screenImage;
         this.m_wManPpu  = manPpu;
 
-        return true;
+        return  true;
+    }
+
+    //----------------------------------------------------------------
+    /**   ゲーム画面を表示する。
+    **
+    **/
+    public virtual void showScreen()
+    {
+        System.Drawing.Bitmap   imgCanvas;
+        System.Drawing.Graphics grpCanvas;
+        IntPtr  hDC;
+        System.Drawing.Brush    brushBG;
+        System.Drawing.Color    colorBG;
+
+        imgCanvas = this.m_imgBuffer;
+        grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas);
+
+        colorBG = System.Drawing.Color.FromArgb(0xFF, 0x00, 0x00, 0xFF);
+        brushBG = new System.Drawing.SolidBrush(colorBG);
+        grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds);
+
+        hDC = grpCanvas.GetHdc();
+        m_bitmapRenderer.drawImage(hDC, 0, 0, 256, 240, 0, 0);
+        grpCanvas.ReleaseHdc(hDC);
+        grpCanvas.Dispose();
+
+        picView.Image = imgCanvas;
     }
 
     //----------------------------------------------------------------
@@ -167,7 +173,7 @@ public partial class GameScreen : UserControl
     **/
     private void btnClear_Click(object sender, EventArgs e)
     {
-        clearGraphics();
+        clearScreen();
     }
 
     //----------------------------------------------------------------
@@ -194,7 +200,7 @@ public partial class GameScreen : UserControl
     private NesDbgWrap.NesMan.BasePpuCore?      m_wManPpu;
 
     /**   イメージ用バッファ。  **/
-    System.Drawing.Bitmap?                      m_imgBuffer;
+    System.Drawing.Bitmap                       m_imgBuffer;
 
     private NesDbgWrap.Images.FullColorImage?   m_screenImage;
 
