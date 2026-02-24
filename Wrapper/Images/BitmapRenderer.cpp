@@ -149,6 +149,28 @@ BitmapRenderer::drawImage(
     );
 }
 
+//----------------------------------------------------------------
+//    イメージをデバイスに表示する。
+//
+
+int
+BitmapRenderer::drawImage(
+        IntPtr      hDC,
+        const  int  dx,
+        const  int  dy,
+        const  int  dw,
+        const  int  dh,
+        const  int  sx,
+        const  int  sy,
+        const  int  sw,
+        const  int  sh)
+{
+    return  this->m_ptrObj->drawImage(
+                static_cast<HDC>(hDC.ToPointer()),
+                dx, dy, dw, dh, sx, sy, sw, dh
+    );
+}
+
 //========================================================================
 //
 //    Public Member Functions.
