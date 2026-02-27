@@ -174,10 +174,7 @@ private:
 
     WrapNesMan  *   m_pManNes;
 
-    WrapTarget  *   m_ptrObj;
-
-    NesManager ^    m_wManNes;
-
+    /**   描画先のイメージ。    **/
     Images::FullColorImage^     m_wImage;
 
 };

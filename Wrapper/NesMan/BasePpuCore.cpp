@@ -54,9 +54,7 @@ namespace  {
 BasePpuCore::BasePpuCore(
         NesManager^ manNes)
     : Super(manNes->UnmanagedObject->getOrCreatePpuInstance()),
-      m_pManNes(manNes->UnmanagedObject),
-      m_ptrObj(new WrapTarget(*m_pManNes, m_pManNes->getMemoryManager())),
-      m_wManNes(manNes)
+      m_wImage(nullptr)
 {
 }
 
@@ -68,7 +66,6 @@ BasePpuCore::BasePpuCore(
 BasePpuCore::~BasePpuCore()
 {
     //  マネージドリソースを破棄する。              //
-    this->m_wManNes = nullptr;
 
     //  続いて、アンマネージドリソースも破棄する。  //
     this->!BasePpuCore();
@@ -81,9 +78,6 @@ BasePpuCore::~BasePpuCore()
 
 BasePpuCore::!BasePpuCore()
 {
-    delete  this->m_ptrObj;
-    this->m_ptrObj  = nullptr;
-
     this->m_pManNes = nullptr;
 }
 
@@ -114,7 +108,7 @@ BasePpuCore::!BasePpuCore()
 void
 BasePpuCore::drawScreen()
 {
-    this->m_ptrObj->drawScreen();
+    this->UnmanagedObject->drawScreen();
 }
 
 //========================================================================
@@ -150,7 +144,7 @@ void
 NesMan::BasePpuCore::TargetImage::set(Images::FullColorImage^ value)
 {
     this->m_wImage  = value;
-    this->m_ptrObj->setScreenImage(value->UnmanagedObject);
+    this->UnmanagedObject->setScreenImage(value->UnmanagedObject);
 }
 
 //========================================================================
