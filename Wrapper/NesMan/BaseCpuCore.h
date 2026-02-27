@@ -142,6 +142,13 @@ public:
 //
 //    Member Variables.
 //
+private:
+
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    PWrapTarget     m_ptrObj;
+#else
+    PWrapTarget *   m_ptrObj;
+#endif
 
 };
 
