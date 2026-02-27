@@ -150,6 +150,24 @@ public:
 //
 //    Properties.
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   ラップ対象オブジェクトを取得する。
+    **
+    **/
+    property    WrapTarget  *
+    UnmanagedObject
+    {
+        WrapTarget *    get()
+        {
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+            return ( this->m_ptrObj );
+#else
+            return  this->m_ptrObj->get();
+#endif
+        }
+    }
 
 //========================================================================
 //
