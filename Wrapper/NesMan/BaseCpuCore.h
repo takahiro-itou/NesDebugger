@@ -24,10 +24,6 @@
 #    include    "NesDbg/NesMan/BaseCpuCore.h"
 #endif
 
-#if !defined( NESDBG_NESMAN_INCLUDED_NES_MANAGER_H )
-#    include    "NesDbg/NesMan/NesManager.h"
-#endif
-
 #include    "../Common/ReferenceWrapper.h"
 
 
@@ -54,7 +50,7 @@ ref  class  NesManager;
 //
 
 public ref  class  BaseCpuCore
-    : public  ReferenceWrapper<NesDbg::NesMan::BaseCpuCore>
+    : public ReferenceWrapper<NesDbg::NesMan::BaseCpuCore>
 {
 
 //========================================================================
