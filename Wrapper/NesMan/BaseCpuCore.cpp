@@ -22,6 +22,10 @@
 
 #include    "BaseCpuCore.h"
 
+#if !defined( NESDBG_NESMAN_INCLUDED_BASE_CPU_CORE_H )
+#    include    "NesDbg/NesMan/BaseCpuCore.h"
+#endif
+
 
 namespace  NesDbgWrap  {
 namespace  NesMan  {

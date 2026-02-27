@@ -20,17 +20,12 @@
 
 #pragma once
 
-#if !defined( NESDBG_NESMAN_INCLUDED_BASE_CPU_CORE_H )
-#    include    "NesDbg/NesMan/BaseCpuCore.h"
-#endif
-
 #include    "../Common/ReferenceWrapper.h"
 
 
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
 namespace  NesMan  {
-class   NesManager;
 class   BaseCpuCore;
 }   //  End of namespace  NesMan
 }   //  End of namespace  NesDbg
@@ -39,9 +34,6 @@ using namespace System;
 
 namespace  NesDbgWrap  {
 namespace  NesMan  {
-
-//  クラスの前方宣言。  //
-ref  class  NesManager;
 
 
 //========================================================================
