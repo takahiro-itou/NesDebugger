@@ -53,7 +53,8 @@ namespace  {
 
 BasePpuCore::BasePpuCore(
         NesManager^ manNes)
-    : m_pManNes(manNes->UnmanagedObject),
+    : Super(manNes->UnmanagedObject->getOrCreatePpuInstance()),
+      m_pManNes(manNes->UnmanagedObject),
       m_ptrObj(new WrapTarget(*m_pManNes, m_pManNes->getMemoryManager())),
       m_wManNes(manNes)
 {

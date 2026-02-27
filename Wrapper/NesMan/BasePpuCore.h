@@ -24,6 +24,8 @@
 #    include    "NesDbg/NesMan/BasePpuCore.h"
 #endif
 
+#include    "../Common/ReferenceWrapper.h"
+
 
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
@@ -53,6 +55,7 @@ ref  class  NesManager;
 //
 
 public ref  class  BasePpuCore
+    : public ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
 {
 
 //========================================================================
@@ -60,6 +63,11 @@ public ref  class  BasePpuCore
 //    Internal Type Definitions.
 //
 private:
+
+    typedef     ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
+    Super;
+
+    typedef     typename  Super::PWrapTarget    PWrapTarget;
 
     //  typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
     typedef     NesDbg::NesMan::NesPpuImpl      WrapTarget;
