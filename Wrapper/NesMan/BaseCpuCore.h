@@ -28,6 +28,8 @@
 #    include    "NesDbg/NesMan/NesManager.h"
 #endif
 
+#include    "../Common/ReferenceWrapper.h"
+
 
 //  クラスの前方宣言。  //
 namespace  NesDbg  {

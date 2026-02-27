@@ -23,6 +23,8 @@
 #include    <msclr/marshal_cppstd.h>
 
 #include    "NesManager.h"
+#include    "BaseCpuCore.h"
+#include    "BasePpuCore.h"
 
 
 namespace  NesDbgWrap  {
@@ -105,6 +107,8 @@ BaseCpuCore^
 NesManager::getOrCreateCpuInstance()
 {
     if ( this->m_wCpuCur == nullptr ) {
+        this->m_wCpuCur = gcnew BaseCpuCore(
+                this->m_ptrObj->getOrCreateCpuInstance());
     }
     return ( this->m_wCpuCur );
 }
