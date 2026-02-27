@@ -28,6 +28,11 @@
 #    include    "NesDbg/pch/PreCompile.h"
 #endif
 
+#if !defined( NESDBG_SYS_STL_INCLUDED_MEMORY )
+#    include    <memory>
+#    define   NESDBG_SYS_STL_INCLUDED_MEMORY
+#endif
+
 #if !defined( NESDBG_SYS_INCLUDED_WINDOWS_H )
 #    include    <windows.h>
 #    define   NESDBG_SYS_INCLUDED_WINDOWS_H
