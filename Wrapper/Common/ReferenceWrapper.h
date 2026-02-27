@@ -45,7 +45,7 @@ public ref  class  ReferenceWrapper
 //
 //    Internal Type Definitions.
 //
-private:
+public:
 
     /**   ラップ対象の型。          **/
     typedef     T                   WrapTarget;

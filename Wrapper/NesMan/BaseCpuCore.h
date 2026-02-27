@@ -54,6 +54,7 @@ ref  class  NesManager;
 //
 
 public ref  class  BaseCpuCore
+    : public  ReferenceWrapper<NesDbg::NesMan::BaseCpuCore>
 {
 
 //========================================================================
@@ -62,9 +63,10 @@ public ref  class  BaseCpuCore
 //
 private:
 
-    typedef     NesDbg::NesMan::BaseCpuCore         WrapTarget;
+    typedef     ReferenceWrapper<NesDbg::NesMan::BaseCpuCore>
+    Super;
 
-    typedef     NesDbg::NesMan::BaseCpuCorePtr      PWrapTarget;
+    typedef     typename  Super::PWrapTarget    PWrapTarget;
 
 
 //========================================================================
@@ -144,13 +146,6 @@ public:
 //
 //    Member Variables.
 //
-private:
-
-#if defined( NESDBG_DISABLE_SHAREDPTR )
-    PWrapTarget     m_ptrObj;
-#else
-    PWrapTarget *   m_ptrObj;
-#endif
 
 };
 

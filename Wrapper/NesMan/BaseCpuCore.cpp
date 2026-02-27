@@ -48,12 +48,7 @@ namespace  {
 
 BaseCpuCore::BaseCpuCore(
         PWrapTarget  const  ptrObj)
-    :
-#if defined( NESDBG_DISABLE_SHAREDPTR )
-    m_ptrObj(ptrObj)
-#else
-    m_ptrObj(new PWrapTarget(ptrObj))
-#endif
+    : Super(ptrObj)
 {
 }
 
@@ -77,8 +72,6 @@ BaseCpuCore::~BaseCpuCore()
 
 BaseCpuCore::!BaseCpuCore()
 {
-    delete  this->m_ptrObj;
-    this->m_ptrObj  = nullptr;
 }
 
 //========================================================================
