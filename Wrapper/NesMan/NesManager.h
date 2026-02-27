@@ -28,6 +28,11 @@ using namespace System;
 namespace  NesDbgWrap  {
 namespace  NesMan  {
 
+//  クラスの前方宣言。  //
+ref  class  BasePpuCore;
+ref  class  BaseCpuCore;
+
+
 //========================================================================
 //
 //    NesManager  class.
