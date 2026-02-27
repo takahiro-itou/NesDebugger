@@ -20,6 +20,11 @@
 
 #pragma once
 
+#if !defined( NESDBG_SYS_STL_INCLUDED_MEMORY )
+#    include    <memory>
+#    define   NESDBG_SYS_STL_INCLUDED_MEMORY
+#endif
+
 
 using namespace System;
 
@@ -40,6 +45,18 @@ public ref  class  ReferenceWrapper
 //
 //    Internal Type Definitions.
 //
+private:
+
+    /**   ラップ対象の型。          **/
+    typedef     T                   WrapTarget;
+
+    /**   ラップ対象のポインタ型。  **/
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    typedef     T *                 PWrapTarget;
+#else
+    typedef     std::shared_ptr<T>  PWrapTarget;
+#endif
+
 
 //========================================================================
 //
@@ -49,24 +66,55 @@ public:
 
     //----------------------------------------------------------------
     /**   インスタンスを初期化する
-    **  （デフォルトコンストラクタ）。
+    **  （コンストラクタ）。
     **
     **/
-    ReferenceWrapper();
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    ReferenceWrapper(
+            PWrapTarget  const  ptrObj)
+        : m_ptrObj(ptrObj)
+    { }
+#else
+    ReferenceWrapper(
+            PWrapTarget  const  ptrObj)
+        : m_ptrObj(new PWrapTarget())
+    {
+        this->m_ptrObj->operator = (ptrObj);
+    }
+#endif
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （デストラクタ）。
     **
     **/
-    virtual  ~ReferenceWrapper();
+    virtual  ~ReferenceWrapper()
+    {
+        //  マネージドリソースを破棄する。              //
+
+        //  続いて、アンマネージドリソースも破棄する。  //
+        this->!ReferenceWrapper();
+    }
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （ファイナライザ）。
     **
     **/
-    !ReferenceWrapper();
+    !ReferenceWrapper()
+    {
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+        //  すでに存在しているインスタンスの    //
+        //  参照を保持しているだけであるから、  //
+        //  リソースを解放してはいけない。      //
+#else
+        //  ただし、ポインタを格納するための    //
+        //  領域自体は不要になるので削除する。  //
+        delete  this->m_ptrObj;
+#endif
+        this->m_ptrObj  = nullptr;
+    }
+
 
 //========================================================================
 //
@@ -118,6 +166,12 @@ public:
 //    Member Variables.
 //
 private:
+
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    PWrapTarget     m_ptrObj;
+#else
+    PWrapTarget *   m_ptrObj;
+#endif
 
 };
 
