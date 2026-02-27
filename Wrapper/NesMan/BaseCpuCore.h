@@ -24,6 +24,10 @@
 #    include    "NesDbg/NesMan/BaseCpuCore.h"
 #endif
 
+#if !defined( NESDBG_NESMAN_INCLUDED_NES_MANAGER_H )
+#    include    "NesDbg/NesMan/NesManager.h"
+#endif
+
 
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
@@ -56,7 +60,9 @@ public ref  class  BaseCpuCore
 //
 private:
 
-    typedef     NesDbg::NesMan::BaseCpuCore     WrapTarget;
+    typedef     NesDbg::NesMan::BaseCpuCore         WrapTarget;
+
+    typedef     NesDbg::NesMan::BaseCpuCorePtr      PWrapTarget;
 
 
 //========================================================================
@@ -71,7 +77,7 @@ public:
     **
     **/
     BaseCpuCore(
-            WrapTarget * const  ptrObj);
+            PWrapTarget  const  ptrObj);
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する

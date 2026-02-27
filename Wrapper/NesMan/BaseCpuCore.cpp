@@ -47,7 +47,7 @@ namespace  {
 //
 
 BaseCpuCore::BaseCpuCore(
-        WrapTarget * const  ptrObj)
+        PWrapTarget  const  ptrObj)
 {
 }
 
