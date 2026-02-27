@@ -121,6 +121,8 @@ BasePpuCore^
 NesManager::getOrCreatePpuInstance()
 {
     if ( this->m_wPpuCur == nullptr ) {
+        this->m_wPpuCur = gcnew BasePpuCore(
+                this);
     }
     return ( this->m_wPpuCur );
 }
