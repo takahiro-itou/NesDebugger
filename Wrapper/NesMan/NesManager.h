@@ -98,6 +98,22 @@ public:
 public:
 
     //----------------------------------------------------------------
+    /**   CPU インスタンスを取得する。
+    **
+    **  インスタンスが存在しない場合は新規作成する。
+    **/
+    virtual  BaseCpuCore^
+    getOrCreateCpuInstance();
+
+    //----------------------------------------------------------------
+    /**   PPU インスタンスを取得する。
+    **
+    **  インスタンスが存在しない場合は新規作成する。
+    **/
+    virtual  BasePpuCore^
+    getOrCreatePpuInstance();
+
+    //----------------------------------------------------------------
     /**   ROM ファイルを読み込む。
     **
     **  @param [in] fileName    ファイル名。
@@ -153,6 +169,10 @@ public:
 private:
 
     WrapTarget  *   m_ptrObj;
+
+    BaseCpuCore^    m_wCpuCur;
+
+    BasePpuCore^    m_wPpuCur;
 };
 
 }   //  End of namespace  NesMan

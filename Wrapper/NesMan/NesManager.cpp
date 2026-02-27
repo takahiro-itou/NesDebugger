@@ -98,6 +98,30 @@ NesManager::!NesManager()
 //
 
 //----------------------------------------------------------------
+//    CPU インスタンスを取得する。
+//
+
+BaseCpuCore^
+NesManager::getOrCreateCpuInstance()
+{
+    if ( this->m_wCpuCur == nullptr ) {
+    }
+    return ( this->m_wCpuCur );
+}
+
+//----------------------------------------------------------------
+//    PPU インスタンスを取得する。
+//
+
+BasePpuCore^
+NesManager::getOrCreatePpuInstance()
+{
+    if ( this->m_wPpuCur == nullptr ) {
+    }
+    return ( this->m_wPpuCur );
+}
+
+//----------------------------------------------------------------
 //    ROM ファイルを読み込む。
 //
 
