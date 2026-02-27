@@ -72,7 +72,6 @@ private:
     //  typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
     typedef     NesDbg::NesMan::NesPpuImpl      WrapTarget;
 
-    typedef     NesDbg::NesMan::NesManager      WrapNesMan;
 
 //========================================================================
 //
@@ -171,8 +170,6 @@ public:
 //    Member Variables.
 //
 private:
-
-    WrapNesMan  *   m_pManNes;
 
     /**   描画先のイメージ。    **/
     Images::FullColorImage^     m_wImage;

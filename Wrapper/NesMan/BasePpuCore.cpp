@@ -78,7 +78,6 @@ BasePpuCore::~BasePpuCore()
 
 BasePpuCore::!BasePpuCore()
 {
-    this->m_pManNes = nullptr;
 }
 
 //========================================================================
