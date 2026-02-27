@@ -21,11 +21,11 @@
 #include    "PreCompile.h"
 
 #include    "BasePpuCore.h"
-#include    "NesManager.h"
 #include    "../Images/FullColorImage.h"
 
-#include    "NesDbg/NesMan/NesManager.h"
-#include    "../../Core/Lib/NesMan/PpuNes/NesPpuImpl.h"
+#if !defined( NESDBG_NESMAN_INCLUDED_BASE_PPU_CORE_H )
+#    include    "NesDbg/NesMan/BasePpuCore.h"
+#endif
 
 
 namespace  NesDbgWrap  {
@@ -52,8 +52,8 @@ namespace  {
 //
 
 BasePpuCore::BasePpuCore(
-        NesManager^ manNes)
-    : Super(manNes->UnmanagedObject->getOrCreatePpuInstance()),
+        PWrapTarget  const  ptrObj)
+    : Super(ptrObj),
       m_wImage(nullptr)
 {
 }

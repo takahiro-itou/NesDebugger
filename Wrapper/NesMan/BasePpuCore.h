@@ -20,18 +20,13 @@
 
 #pragma once
 
-#if !defined( NESDBG_NESMAN_INCLUDED_BASE_PPU_CORE_H )
-#    include    "NesDbg/NesMan/BasePpuCore.h"
-#endif
-
 #include    "../Common/ReferenceWrapper.h"
 
 
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
 namespace  NesMan  {
-class   NesManager;
-class   NesPpuImpl;
+class   BasePpuCore;
 }   //  End of namespace  NesMan
 }   //  End of namespace  NesDbg
 
@@ -46,8 +41,6 @@ ref  class  FullColorImage;
 
 namespace  NesMan  {
 
-//  クラスの前方宣言。  //
-ref  class  NesManager;
 
 //========================================================================
 //
@@ -69,9 +62,6 @@ private:
 
     typedef     typename  Super::PWrapTarget    PWrapTarget;
 
-    //  typedef     NesDbg::NesMan::BasePpuCore     WrapTarget;
-    typedef     NesDbg::NesMan::NesPpuImpl      WrapTarget;
-
 
 //========================================================================
 //
@@ -85,7 +75,7 @@ public:
     **
     **/
     BasePpuCore(
-            NesManager^ manNes);
+            PWrapTarget  const  ptrObj);
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
