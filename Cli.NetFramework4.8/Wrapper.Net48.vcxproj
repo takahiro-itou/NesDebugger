@@ -95,6 +95,7 @@
     <ClInclude Include="..\Wrapper\PreCompile.h" />
     <ClInclude Include="..\Wrapper\Images\BitmapRenderer.h" />
     <ClInclude Include="..\Wrapper\Images\FullColorImage.h" />
+    <ClInclude Include="..\Wrapper\NesMan\BaseCpuCore.h" />
     <ClInclude Include="..\Wrapper\NesMan\BasePpuCore.h" />
     <ClInclude Include="..\Wrapper\NesMan\NesManager.h" />
   </ItemGroup>
@@ -106,6 +107,7 @@
     </ClCompile>
     <ClCompile Include="..\Wrapper\Images\BitmapRenderer.cpp" />
     <ClCompile Include="..\Wrapper\Images\FullColorImage.cpp" />
+    <ClCompile Include="..\Wrapper\NesMan\BaseCpuCore.cpp" />
     <ClCompile Include="..\Wrapper\NesMan\BasePpuCore.cpp" />
     <ClCompile Include="..\Wrapper\NesMan\NesManager.cpp" />
   </ItemGroup>

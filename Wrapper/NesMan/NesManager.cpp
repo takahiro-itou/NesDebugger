@@ -23,6 +23,8 @@
 #include    <msclr/marshal_cppstd.h>
 
 #include    "NesManager.h"
+#include    "BaseCpuCore.h"
+#include    "BasePpuCore.h"
 
 
 namespace  NesDbgWrap  {
@@ -96,6 +98,34 @@ NesManager::!NesManager()
 //
 //    Public Member Functions (Virtual Functions).
 //
+
+//----------------------------------------------------------------
+//    CPU インスタンスを取得する。
+//
+
+BaseCpuCore^
+NesManager::getOrCreateCpuInstance()
+{
+    if ( this->m_wCpuCur == nullptr ) {
+        this->m_wCpuCur = gcnew BaseCpuCore(
+                this->m_ptrObj->getOrCreateCpuInstance());
+    }
+    return ( this->m_wCpuCur );
+}
+
+//----------------------------------------------------------------
+//    PPU インスタンスを取得する。
+//
+
+BasePpuCore^
+NesManager::getOrCreatePpuInstance()
+{
+    if ( this->m_wPpuCur == nullptr ) {
+        this->m_wPpuCur = gcnew BasePpuCore(
+                this->m_ptrObj->getOrCreatePpuInstance());
+    }
+    return ( this->m_wPpuCur );
+}
 
 //----------------------------------------------------------------
 //    ROM ファイルを読み込む。

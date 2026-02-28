@@ -13,83 +13,70 @@
 *************************************************************************/
 
 /**
-**      An Interface of BasePpuCore class.
+**      An Implementation of BaseCpuCore class.
 **
-**      @file       NesMan/BasePpuCore.h
+**      @file       Images/BaseCpuCore.cpp
 **/
 
-#pragma once
+#include    "PreCompile.h"
 
-#include    "../Common/ReferenceWrapper.h"
+#include    "BaseCpuCore.h"
 
+#if !defined( NESDBG_NESMAN_INCLUDED_BASE_CPU_CORE_H )
+#    include    "NesDbg/NesMan/BaseCpuCore.h"
+#endif
 
-//  クラスの前方宣言。  //
-namespace  NesDbg  {
-namespace  NesMan  {
-class   BasePpuCore;
-}   //  End of namespace  NesMan
-}   //  End of namespace  NesDbg
-
-using namespace System;
 
 namespace  NesDbgWrap  {
-
-//  クラスの前方宣言。  //
-namespace  Images  {
-ref  class  FullColorImage;
-}   //  End of namespace  Images
-
 namespace  NesMan  {
 
+namespace  {
+
+}   //  End of (Unnamed) namespace
+
 
 //========================================================================
 //
-//    BasePpuCore  class.
+//    BaseCpuCore  class.
 //
-
-public ref  class  BasePpuCore
-    : public ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
-{
-
-//========================================================================
-//
-//    Internal Type Definitions.
-//
-private:
-
-    typedef     ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
-    Super;
-
-    typedef     typename  Super::PWrapTarget    PWrapTarget;
-
 
 //========================================================================
 //
 //    Constructor(s) and Destructor.
 //
-public:
 
-    //----------------------------------------------------------------
-    /**   インスタンスを初期化する
-    **  （コンストラクタ）。
-    **
-    **/
-    BasePpuCore(
-            PWrapTarget  const  ptrObj);
+//----------------------------------------------------------------
+//    インスタンスを初期化する
+//  （コンストラクタ）。
+//
 
-    //----------------------------------------------------------------
-    /**   インスタンスを破棄する
-    **  （デストラクタ）。
-    **
-    **/
-    virtual  ~BasePpuCore();
+BaseCpuCore::BaseCpuCore(
+        PWrapTarget  const  ptrObj)
+    : Super(ptrObj)
+{
+}
 
-    //----------------------------------------------------------------
-    /**   インスタンスを破棄する
-    **  （ファイナライザ）。
-    **
-    **/
-    !BasePpuCore();
+//----------------------------------------------------------------
+//    インスタンスを破棄する
+//  （デストラクタ）。
+//
+
+BaseCpuCore::~BaseCpuCore()
+{
+    //  マネージドリソースを破棄する。              //
+
+    //  続いて、アンマネージドリソースも破棄する。  //
+    this->!BaseCpuCore();
+}
+
+//----------------------------------------------------------------
+//    インスタンスを破棄する
+//  （ファイナライザ）。
+//
+
+BaseCpuCore::!BaseCpuCore()
+{
+}
 
 //========================================================================
 //
@@ -110,14 +97,6 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   画面を描画する。
-    **
-    **/
-    virtual  void
-    drawScreen();
 
 //========================================================================
 //
@@ -133,17 +112,6 @@ public:
 //
 //    Properties.
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   イメージオブジェクト。
-    **
-    **/
-    property    Images::FullColorImage^     TargetImage
-    {
-        Images::FullColorImage^ get();
-        void set(Images::FullColorImage^ value);
-    }
 
 //========================================================================
 //
@@ -154,17 +122,6 @@ public:
 //
 //    For Internal Use Only.
 //
-
-//========================================================================
-//
-//    Member Variables.
-//
-private:
-
-    /**   描画先のイメージ。    **/
-    Images::FullColorImage^     m_wImage;
-
-};
 
 }   //  End of namespace  NesMan
 }   //  End of namespace  NesDbgWrap

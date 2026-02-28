@@ -21,11 +21,11 @@
 #include    "PreCompile.h"
 
 #include    "BasePpuCore.h"
-#include    "NesManager.h"
 #include    "../Images/FullColorImage.h"
 
-#include    "NesDbg/NesMan/NesManager.h"
-#include    "../../Core/Lib/NesMan/PpuNes/NesPpuImpl.h"
+#if !defined( NESDBG_NESMAN_INCLUDED_BASE_PPU_CORE_H )
+#    include    "NesDbg/NesMan/BasePpuCore.h"
+#endif
 
 
 namespace  NesDbgWrap  {
@@ -52,10 +52,9 @@ namespace  {
 //
 
 BasePpuCore::BasePpuCore(
-        NesManager^ manNes)
-    : m_pManNes(manNes->UnmanagedObject),
-      m_ptrObj(new WrapTarget(*m_pManNes, m_pManNes->getMemoryManager())),
-      m_wManNes(manNes)
+        PWrapTarget  const  ptrObj)
+    : Super(ptrObj),
+      m_wImage(nullptr)
 {
 }
 
@@ -67,7 +66,6 @@ BasePpuCore::BasePpuCore(
 BasePpuCore::~BasePpuCore()
 {
     //  マネージドリソースを破棄する。              //
-    this->m_wManNes = nullptr;
 
     //  続いて、アンマネージドリソースも破棄する。  //
     this->!BasePpuCore();
@@ -80,10 +78,6 @@ BasePpuCore::~BasePpuCore()
 
 BasePpuCore::!BasePpuCore()
 {
-    delete  this->m_ptrObj;
-    this->m_ptrObj  = nullptr;
-
-    this->m_pManNes = nullptr;
 }
 
 //========================================================================
@@ -113,7 +107,7 @@ BasePpuCore::!BasePpuCore()
 void
 BasePpuCore::drawScreen()
 {
-    this->m_ptrObj->drawScreen();
+    this->UnmanagedObject->drawScreen();
 }
 
 //========================================================================
@@ -149,7 +143,7 @@ void
 NesMan::BasePpuCore::TargetImage::set(Images::FullColorImage^ value)
 {
     this->m_wImage  = value;
-    this->m_ptrObj->setScreenImage(value->UnmanagedObject);
+    this->UnmanagedObject->setScreenImage(value->UnmanagedObject);
 }
 
 //========================================================================

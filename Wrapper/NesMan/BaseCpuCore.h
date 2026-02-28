@@ -13,9 +13,9 @@
 *************************************************************************/
 
 /**
-**      An Interface of BasePpuCore class.
+**      An Interface of BaseCpuCore class.
 **
-**      @file       NesMan/BasePpuCore.h
+**      @file       NesMan/BaseCpuCore.h
 **/
 
 #pragma once
@@ -26,29 +26,23 @@
 //  クラスの前方宣言。  //
 namespace  NesDbg  {
 namespace  NesMan  {
-class   BasePpuCore;
+class   BaseCpuCore;
 }   //  End of namespace  NesMan
 }   //  End of namespace  NesDbg
 
 using namespace System;
 
 namespace  NesDbgWrap  {
-
-//  クラスの前方宣言。  //
-namespace  Images  {
-ref  class  FullColorImage;
-}   //  End of namespace  Images
-
 namespace  NesMan  {
 
 
 //========================================================================
 //
-//    BasePpuCore  class.
+//    BaseCpuCore  class.
 //
 
-public ref  class  BasePpuCore
-    : public ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
+public ref  class  BaseCpuCore
+    : public ReferenceWrapper<NesDbg::NesMan::BaseCpuCore>
 {
 
 //========================================================================
@@ -57,7 +51,7 @@ public ref  class  BasePpuCore
 //
 private:
 
-    typedef     ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
+    typedef     ReferenceWrapper<NesDbg::NesMan::BaseCpuCore>
     Super;
 
     typedef     typename  Super::PWrapTarget    PWrapTarget;
@@ -74,7 +68,7 @@ public:
     **  （コンストラクタ）。
     **
     **/
-    BasePpuCore(
+    BaseCpuCore(
             PWrapTarget  const  ptrObj);
 
     //----------------------------------------------------------------
@@ -82,14 +76,14 @@ public:
     **  （デストラクタ）。
     **
     **/
-    virtual  ~BasePpuCore();
+    virtual  ~BaseCpuCore();
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （ファイナライザ）。
     **
     **/
-    !BasePpuCore();
+    !BaseCpuCore();
 
 //========================================================================
 //
@@ -110,14 +104,6 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   画面を描画する。
-    **
-    **/
-    virtual  void
-    drawScreen();
 
 //========================================================================
 //
@@ -133,17 +119,6 @@ public:
 //
 //    Properties.
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   イメージオブジェクト。
-    **
-    **/
-    property    Images::FullColorImage^     TargetImage
-    {
-        Images::FullColorImage^ get();
-        void set(Images::FullColorImage^ value);
-    }
 
 //========================================================================
 //
@@ -159,10 +134,6 @@ public:
 //
 //    Member Variables.
 //
-private:
-
-    /**   描画先のイメージ。    **/
-    Images::FullColorImage^     m_wImage;
 
 };
 
