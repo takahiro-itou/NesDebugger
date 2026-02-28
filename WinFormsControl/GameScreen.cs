@@ -125,7 +125,6 @@ public partial class GameScreen : UserControl
       , Description("余白部分の背景色")
       , Category("表示")
     ]
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public System.Drawing.Color MarginAreaColor
     {
         get { return  this.m_marginColor; }

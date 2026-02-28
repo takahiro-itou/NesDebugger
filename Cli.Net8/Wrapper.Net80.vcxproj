@@ -10,7 +10,7 @@
     <Keyword>NetCoreCProj</Keyword>
     <ProjectGuid>{4869195C-1E29-42CF-9FB5-52CE89AC49B1}</ProjectGuid>
     <RootNamespace>Wrapper</RootNamespace>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <VCProjectVersion>17.0</VCProjectVersion>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
