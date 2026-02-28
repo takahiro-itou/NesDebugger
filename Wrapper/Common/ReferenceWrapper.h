@@ -13,54 +13,49 @@
 *************************************************************************/
 
 /**
-**      An Interface of BasePpuCore class.
+**      An Interface of ReferenceWrapper class.
 **
-**      @file       NesMan/BasePpuCore.h
+**      @file       NesMan/ReferenceWrapper.h
 **/
 
 #pragma once
 
-#include    "../Common/ReferenceWrapper.h"
+#if !defined( NESDBG_SYS_STL_INCLUDED_MEMORY )
+#    include    <memory>
+#    define   NESDBG_SYS_STL_INCLUDED_MEMORY
+#endif
 
-
-//  クラスの前方宣言。  //
-namespace  NesDbg  {
-namespace  NesMan  {
-class   BasePpuCore;
-}   //  End of namespace  NesMan
-}   //  End of namespace  NesDbg
 
 using namespace System;
 
 namespace  NesDbgWrap  {
-
-//  クラスの前方宣言。  //
-namespace  Images  {
-ref  class  FullColorImage;
-}   //  End of namespace  Images
-
 namespace  NesMan  {
 
 
 //========================================================================
 //
-//    BasePpuCore  class.
+//    ReferenceWrapper  class.
 //
 
-public ref  class  BasePpuCore
-    : public ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
+template  <typename T>
+public ref  class  ReferenceWrapper
 {
 
 //========================================================================
 //
 //    Internal Type Definitions.
 //
-private:
+public:
 
-    typedef     ReferenceWrapper<NesDbg::NesMan::BasePpuCore>
-    Super;
+    /**   ラップ対象の型。          **/
+    typedef     T                   WrapTarget;
 
-    typedef     typename  Super::PWrapTarget    PWrapTarget;
+    /**   ラップ対象のポインタ型。  **/
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    typedef     T *                 PWrapTarget;
+#else
+    typedef     std::shared_ptr<T>  PWrapTarget;
+#endif
 
 
 //========================================================================
@@ -74,22 +69,52 @@ public:
     **  （コンストラクタ）。
     **
     **/
-    BasePpuCore(
-            PWrapTarget  const  ptrObj);
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    ReferenceWrapper(
+            PWrapTarget  const  ptrObj)
+        : m_ptrObj(ptrObj)
+    { }
+#else
+    ReferenceWrapper(
+            PWrapTarget  const  ptrObj)
+        : m_ptrObj(new PWrapTarget())
+    {
+        this->m_ptrObj->operator = (ptrObj);
+    }
+#endif
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （デストラクタ）。
     **
     **/
-    virtual  ~BasePpuCore();
+    virtual  ~ReferenceWrapper()
+    {
+        //  マネージドリソースを破棄する。              //
+
+        //  続いて、アンマネージドリソースも破棄する。  //
+        this->!ReferenceWrapper();
+    }
 
     //----------------------------------------------------------------
     /**   インスタンスを破棄する
     **  （ファイナライザ）。
     **
     **/
-    !BasePpuCore();
+    !ReferenceWrapper()
+    {
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+        //  すでに存在しているインスタンスの    //
+        //  参照を保持しているだけであるから、  //
+        //  リソースを解放してはいけない。      //
+#else
+        //  ただし、ポインタを格納するための    //
+        //  領域自体は不要になるので削除する。  //
+        delete  this->m_ptrObj;
+#endif
+        this->m_ptrObj  = nullptr;
+    }
+
 
 //========================================================================
 //
@@ -110,14 +135,6 @@ public:
 //
 //    Public Member Functions (Virtual Functions).
 //
-public:
-
-    //----------------------------------------------------------------
-    /**   画面を描画する。
-    **
-    **/
-    virtual  void
-    drawScreen();
 
 //========================================================================
 //
@@ -136,13 +153,20 @@ public:
 public:
 
     //----------------------------------------------------------------
-    /**   イメージオブジェクト。
+    /**   ラップ対象オブジェクトを取得する。
     **
     **/
-    property    Images::FullColorImage^     TargetImage
+    property    WrapTarget  *
+    UnmanagedObject
     {
-        Images::FullColorImage^ get();
-        void set(Images::FullColorImage^ value);
+        WrapTarget *    get()
+        {
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+            return ( this->m_ptrObj );
+#else
+            return  this->m_ptrObj->get();
+#endif
+        }
     }
 
 //========================================================================
@@ -161,8 +185,11 @@ public:
 //
 private:
 
-    /**   描画先のイメージ。    **/
-    Images::FullColorImage^     m_wImage;
+#if defined( NESDBG_DISABLE_SHAREDPTR )
+    PWrapTarget     m_ptrObj;
+#else
+    PWrapTarget *   m_ptrObj;
+#endif
 
 };
 
