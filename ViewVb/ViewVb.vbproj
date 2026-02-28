@@ -8,7 +8,7 @@
     <Platforms>x64;Win32</Platforms>
     <RootNamespace>ViewVb</RootNamespace>
     <StartupObject>ViewVb.My.MyApplication</StartupObject>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
