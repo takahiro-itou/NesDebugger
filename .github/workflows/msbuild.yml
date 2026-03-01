@@ -41,7 +41,7 @@ jobs :
 
 on :
   push :
-    branches : [ "run-workflow" ]
+    branches : [ "master", "develop", "run-workflow" ]
   pull_request :
-    branches : [ "run-workflow" ]
+    branches : [ "master", "develop", "run-workflow" ]
   workflow_dispatch :
