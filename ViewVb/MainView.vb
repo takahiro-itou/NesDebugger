@@ -85,8 +85,15 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 ''    メニュー「実行」－「カウント」
 ''--------------------------------------------------------------------
-    System.Threading.Thread.Sleep(100)
-    showGameScreen()
+Dim i As Integer
+
+    For i = 0 To 1
+        Me.m_manNes.executeCurrentInst()
+        showGameScreen()
+    Next i
+    System.Threading.Thread.Sleep(16)
+    MessageBox.Show("実行完了")
+
 End Sub
 
 End Class
