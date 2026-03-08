@@ -26,6 +26,8 @@
 #include    "BaseCpuCore.h"
 #include    "BasePpuCore.h"
 
+#include    "NesDbg/NesMan/BaseCpuCore.h"
+
 
 namespace  NesDbgWrap  {
 namespace  NesMan  {
@@ -100,6 +102,38 @@ NesManager::!NesManager()
 //
 
 //----------------------------------------------------------------
+//    リセットを行う。
+//
+
+void
+NesManager::doHardReset()
+{
+    this->m_ptrObj->doHardReset();
+}
+
+//----------------------------------------------------------------
+//    現在の命令を実行する。
+//
+
+void
+NesManager::executeCurrentInst()
+{
+    this->m_ptrObj->executeCurrentInst();
+}
+
+//----------------------------------------------------------------
+//    命令を纏めて実行する。
+//
+
+void
+NesManager::executeInstructions(
+        const   int     maxInsts,
+        const   int     maxCycle)
+{
+    this->m_ptrObj->executeInstructions(maxInsts, maxCycle);
+}
+
+//----------------------------------------------------------------
 //    CPU インスタンスを取得する。
 //
 
@@ -148,6 +182,16 @@ NesManager::openRomFile(
 //
 //    Accessors.
 //
+
+//----------------------------------------------------------------
+//    プログラムカウンタを取得する。
+//
+
+int
+NesManager::getNextPC()
+{
+    return  this->m_ptrObj->getCurrentCpu().getNextPC();
+}
 
 //========================================================================
 //
