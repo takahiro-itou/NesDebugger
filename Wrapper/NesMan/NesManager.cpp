@@ -110,6 +110,18 @@ NesManager::executeCurrentInst()
 }
 
 //----------------------------------------------------------------
+//    命令を纏めて実行する。
+//
+
+void
+NesManager::executeInstructions(
+        const   int     maxInsts,
+        const   int     maxCycle)
+{
+    this->m_ptrObj->executeInstructions(maxInsts, maxCycle);
+}
+
+//----------------------------------------------------------------
 //    CPU インスタンスを取得する。
 //
 
