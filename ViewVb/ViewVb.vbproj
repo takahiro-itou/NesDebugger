@@ -3,6 +3,7 @@
 
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <AssemblyName>NesDebugger</AssemblyName>
     <MyType>WindowsForms</MyType>
     <OutputType>WinExe</OutputType>
     <Platforms>x64;Win32</Platforms>
