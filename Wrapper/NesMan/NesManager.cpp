@@ -26,6 +26,8 @@
 #include    "BaseCpuCore.h"
 #include    "BasePpuCore.h"
 
+#include    "NesDbg/NesMan/BaseCpuCore.h"
+
 
 namespace  NesDbgWrap  {
 namespace  NesMan  {
@@ -180,6 +182,16 @@ NesManager::openRomFile(
 //
 //    Accessors.
 //
+
+//----------------------------------------------------------------
+//    プログラムカウンタを取得する。
+//
+
+int
+NesManager::getNextPC()
+{
+    return  this->m_ptrObj->getCurrentCpu().getNextPC();
+}
 
 //========================================================================
 //
