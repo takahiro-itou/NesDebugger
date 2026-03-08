@@ -86,11 +86,14 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''    メニュー「実行」－「カウント」
 ''--------------------------------------------------------------------
 Dim i As Integer
+Dim p As System.Drawing.Point
 
     For i = 0 To 180
         Me.m_manNes.executeInstructions(5000, 10000)
+        p = Me.m_manPpu.getCurrentScanPoint()
+
         showGameScreen()
-        Me.Text = i
+        Me.Text = i & " SCAN:" & p.x & "," & p.y
         Application.DoEvents()
     Next i
     System.Threading.Thread.Sleep(16)
