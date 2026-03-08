@@ -87,9 +87,11 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 Dim i As Integer
 
-    For i = 0 To 1
-        Me.m_manNes.executeCurrentInst()
+    For i = 0 To 180
+        Me.m_manNes.executeInstructions(5000, 10000)
         showGameScreen()
+        Me.Text = i
+        Application.DoEvents()
     Next i
     System.Threading.Thread.Sleep(16)
     MessageBox.Show("実行完了")
