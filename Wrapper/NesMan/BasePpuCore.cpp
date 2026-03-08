@@ -120,6 +120,18 @@ BasePpuCore::drawScreen()
 //    Accessors.
 //
 
+//----------------------------------------------------------------
+//    現在のスキャン位置を取得する。
+//
+
+System::Drawing::Point
+BasePpuCore::getCurrentScanPoint()
+{
+    const  NesDbg::NtPoint  pt  =
+        this->UnmanagedObject->getCurrentScanPoint();
+    return ( System::Drawing::Point(pt.x, pt.y) );
+}
+
 //========================================================================
 //
 //    Properties.
