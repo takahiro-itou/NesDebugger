@@ -26,12 +26,18 @@ Private Function openRomFile(ByVal fileName As String) As Boolean
 ''--------------------------------------------------------------------
 ''    ゲームをロードする。
 ''--------------------------------------------------------------------
+Dim p As System.Drawing.Point
 
     Me.m_manNes = New NesDbgWrap.NesMan.NesManager
     Me.m_manNes.openRomFile(fileName)
 
     Me.m_manPpu = Me.m_manNes.getOrCreatePpuInstance()
+    Me.m_manNes.doHardReset()
+
     initializeScreen(512, 480)
+
+    Me.Text = "SCAN:" & p.x & "," & p.y & " PC:" &
+            HEX(Me.m_manNes.getNextPC())
 
     openRomFile = True
 End Function
@@ -86,10 +92,16 @@ Private Sub mnuRunCount_Click(sender As Object, e As EventArgs) Handles _
 ''    メニュー「実行」－「カウント」
 ''--------------------------------------------------------------------
 Dim i As Integer
+Dim p As System.Drawing.Point
 
-    For i = 0 To 1
-        Me.m_manNes.executeCurrentInst()
+    For i = 0 To 180
+        Me.m_manNes.executeInstructions(5000, 10000)
+        p = Me.m_manPpu.getCurrentScanPoint()
+
         showGameScreen()
+        Me.Text = i & " SCAN:" & p.x & "," & p.y & " PC:" &
+                HEX(Me.m_manNes.getNextPC())
+        Application.DoEvents()
     Next i
     System.Threading.Thread.Sleep(16)
     MessageBox.Show("実行完了")
