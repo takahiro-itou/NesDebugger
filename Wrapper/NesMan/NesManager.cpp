@@ -102,13 +102,23 @@ NesManager::!NesManager()
 //
 
 //----------------------------------------------------------------
-//    リセットを行う。
+//    電源オンの処理を行う。
 //
 
 void
-NesManager::doHardReset()
+NesManager::emulatePowerOn()
 {
-    this->m_ptrObj->doHardReset();
+    this->m_ptrObj->emulatePowerOn();
+}
+
+//----------------------------------------------------------------
+//    リセットボタン押下の処理を行う。
+//
+
+void
+NesManager::emulateResetButton()
+{
+    this->m_ptrObj->emulateResetButton();
 }
 
 //----------------------------------------------------------------

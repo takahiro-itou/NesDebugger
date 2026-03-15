@@ -32,7 +32,7 @@ Dim p As System.Drawing.Point
     Me.m_manNes.openRomFile(fileName)
 
     Me.m_manPpu = Me.m_manNes.getOrCreatePpuInstance()
-    Me.m_manNes.doHardReset()
+    Me.m_manNes.emulatePowerOn()
 
     initializeScreen(512, 480)
 
