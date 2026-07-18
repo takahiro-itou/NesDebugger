@@ -1,3 +1,9 @@
 [submodule "Core"]
 	path = Core
-	url = ../NesDebuggerCore.git
+	url  = ../NesDebuggerCore.git
+[submodule "NesWpfControl"]
+	path = NesWpfControl
+	url  = ../NesWpfControl.git
+[submodule "WpfControl"]
+	path = WpfControl
+	url  = ../WpfControlLibrary.git
