@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfControl\WpfControl.csproj" />
+    <ProjectReference Include="..\NesWpfControl\NesWpfControl.csproj" />
   </ItemGroup>
 
   <ItemGroup>

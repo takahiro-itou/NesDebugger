@@ -25,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfControl\WpfControl.NetOld.csproj" />
+    <ProjectReference Include="..\NesWpfControl\NesWpfControl.NetOld.csproj" />
   </ItemGroup>
 
   <ItemGroup>
