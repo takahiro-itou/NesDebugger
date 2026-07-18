@@ -5,7 +5,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:NesDebugView"
+    xmlns:nes="clr-namespace:NesWpfControl.Views;assembly=NesWpfControl"
     Title="Main Window"
 >
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+    </Menu>
+
+    <nes:GameScreen
+      x:Name="pfcGameView"
+      Margin="16,16,16,16"
+      Height="240" Width="256"
+    />
+  </DockPanel>
 
 </Window>
