@@ -7,9 +7,20 @@
     xmlns:local="clr-namespace:NesDebugView"
     xmlns:nes="clr-namespace:NesWpfControl.Views;assembly=NesWpfControl"
     Title="Main Window"
+    Height="345" Width="432"
 >
   <DockPanel>
     <Menu DockPanel.Dock="Top">
+      <MenuItem Header="_File">
+        <MenuItem Header="_Open" />
+        <MenuItem Header="Close" />
+        <MenuItem Header="Recent" />
+        <Sep>
+        <MenuItem Header="E_xit"/>
+      </MenuItem>
+      <MenuItem Header="_Run">
+        <MenuItem Header="_Count" />
+      </MenuItem>
     </Menu>
 
     <nes:GameScreen
