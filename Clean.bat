@@ -1,6 +1,6 @@
 
 set  solution=NesDebugger
-set  config="Debug"
+set  config="Clean"
 
 
 msbuild  -restore  -t:Clean     ^
