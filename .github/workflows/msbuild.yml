@@ -2,7 +2,7 @@
 name : MSBuild
 
 env :
-  SOLUTION_FILE_PREFIX : SampleView
+  SOLUTION_FILE_PREFIX : NesDebugger
 
 jobs :
   build :
