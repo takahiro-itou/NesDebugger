@@ -20,8 +20,8 @@ Private Function initializeScreen(
 ''--------------------------------------------------------------------
 ''    画面を初期化する
 ''--------------------------------------------------------------------
-    Me.wfcGameView.initializeScreenImage(w, h)
-    Me.wfcGameView.setupPpuManager(Me.m_manPpu)
+    Me.pfcGameView.initializeScreenImage(w, h)
+    Me.pfcGameView.setupPpuManager(Me.m_manPpu)
     showGameScreen()
     Return True
 End Function
@@ -52,12 +52,11 @@ Private Sub showGameScreen()
 ''--------------------------------------------------------------------
     If Not isInitialized() Then Exit Sub
 
-    Me.wfcGameView.drawScreen()
-    Me.wfcGameView.showScreen()
+    Me.pfcGameView.drawScreen()
+    Me.pfcGameView.showScreen()
 End Sub
 
-Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
-            MyBase.Load
+Private Sub MainView_Load(sender As Object, e As EventArgs)
 ''--------------------------------------------------------------------
 ''    フォームのロードイベントハンドラ
 ''--------------------------------------------------------------------
