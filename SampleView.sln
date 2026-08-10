@@ -65,22 +65,22 @@ Global
         {58D5A5EA-55FA-43CA-B205-7B1312FE1A79}.Release|x86.Build.0   = Release|x86
 
         {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x64.ActiveCfg = Debug|x64
-        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x64.Build.0 = Debug|x64
-        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x86.ActiveCfg = Debug|Win32
-        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x86.Build.0 = Debug|Win32
+        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x64.Build.0   = Debug|x64
+        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x86.ActiveCfg = Debug|x86
+        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Debug|x86.Build.0   = Debug|x86
         {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x64.ActiveCfg = Release|x64
-        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x64.Build.0 = Release|x64
-        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x86.ActiveCfg = Release|Win32
-        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x86.Build.0 = Release|Win32
+        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x64.Build.0   = Release|x64
+        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x86.ActiveCfg = Release|x86
+        {C0C783F3-B92A-40D1-A0C7-F6D7E8F6A541}.Release|x86.Build.0   = Release|x86
 
         {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x64.ActiveCfg = Debug|x64
-        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x64.Build.0 = Debug|x64
-        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x86.ActiveCfg = Debug|Win32
-        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x86.Build.0 = Debug|Win32
+        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x64.Build.0   = Debug|x64
+        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x86.ActiveCfg = Debug|x86
+        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Debug|x86.Build.0   = Debug|x86
         {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x64.ActiveCfg = Release|x64
-        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x64.Build.0 = Release|x64
-        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x86.ActiveCfg = Release|Win32
-        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x86.Build.0 = Release|Win32
+        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x64.Build.0   = Release|x64
+        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x86.ActiveCfg = Release|x86
+        {4486E20D-9A2C-4F4A-9B63-B5CC3F32DBDC}.Release|x86.Build.0   = Release|x86
 
     EndGlobalSection
 
