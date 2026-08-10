@@ -1,8 +1,12 @@
 
+set  solution=NesDebugger
+set  config="Release"
+
+
 msbuild  -restore  -t:Clean     ^
-    -p:Configuration="Release"  -p:Platform=x64     ^
-    NesDebugger.sln
+    -p:Configuration=%config%   -p:Platform=x64     ^
+    "%solution%.sln"
 
 msbuild  -restore  -t:Rebuild   ^
-    -p:Configuration="Release"  -p:Platform=x64     ^
-    NesDebugger.sln
+    -p:Configuration=%config%   -p:Platform=x64     ^
+    "%solution%.sln"
