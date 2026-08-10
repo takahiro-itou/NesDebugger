@@ -6,8 +6,8 @@
     <LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
     <OutputType>WinExe</OutputType>
-    <Platforms>AnyCPU;x64;Win32</Platforms>
-    <RootNamespace>ViewCs</RootNamespace>
+    <Platforms>x64;x86</Platforms>
+    <RootNamespace>NesDebuggerView</RootNamespace>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
