@@ -40,7 +40,7 @@ Dim p As System.Drawing.Point
 
     initializeScreen(512, 480)
 
-    Me.Text = "SCAN:" & p.x & "," & p.y & " PC:" &
+    Me.Title = "SCAN:" & p.x & "," & p.y & " PC:" &
             HEX(Me.m_manNes.getNextPC())
 
     openRomFile = True
@@ -101,12 +101,12 @@ Dim p As System.Drawing.Point
         p = Me.m_manPpu.getCurrentScanPoint()
 
         showGameScreen()
-        Me.Text = i & " SCAN:" & p.x & "," & p.y & " PC:" &
+        Me.Title = i & " SCAN:" & p.x & "," & p.y & " PC:" &
                 HEX(Me.m_manNes.getNextPC())
-        Application.DoEvents()
+        await System.Threading.Tasks.Task.Delay(10)
     Next i
     System.Threading.Thread.Sleep(16)
-    MessageBox.Show("実行完了")
+    System.Windows.MessageBox.Show("実行完了")
 
 End Sub
 
