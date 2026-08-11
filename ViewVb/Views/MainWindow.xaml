@@ -12,14 +12,14 @@
   <DockPanel>
     <Menu DockPanel.Dock="Top">
       <MenuItem Header="_File">
-        <MenuItem Header="_Open" />
+        <MenuItem Header="_Open" Click="mnuFileOpen_Click" />
         <MenuItem Header="Close" />
         <MenuItem Header="Recent" />
         <Separator />
-        <MenuItem Header="E_xit"/>
+        <MenuItem Header="E_xit" Click="mnuFileExit_Click" />
       </MenuItem>
       <MenuItem Header="_Run">
-        <MenuItem Header="_Count" />
+        <MenuItem Header="_Count" Click="mnuRunCount_Click" />
       </MenuItem>
     </Menu>
 
