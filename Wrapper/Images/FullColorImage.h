@@ -232,6 +232,48 @@ public:
 //
 //    Accessors.
 //
+public:
+
+    //----------------------------------------------------------------
+    /**   ピクセル当たりのバイト数を取得する。
+    **
+    **/
+    inline  int
+    getBytesPerPixel()
+    {
+        return  this->m_ptrObj->getBytesPerPixel();
+    }
+
+    //----------------------------------------------------------------
+    /**   画像の高さを取得する。
+    **
+    **/
+    inline  int
+    getHeight()
+    {
+        return  this->m_ptrObj->getHeight();
+    }
+
+    //----------------------------------------------------------------
+    /**   行当たりのバイト数（ストライド）を取得する。
+    **
+    **/
+    inline  int
+    getStride()
+    {
+        return  this->m_ptrObj->getStride();
+    }
+
+    //----------------------------------------------------------------
+    /**   画像の幅を取得する。
+    **
+    **/
+    inline  int
+    getWidth()
+    {
+        return  this->m_ptrObj->getWidth();
+    }
+
 
 //========================================================================
 //
@@ -266,6 +308,7 @@ public:
 private:
 
     WrapTarget  *   m_ptrObj;
+
 };
 
 }   //  End of namespace  Common
