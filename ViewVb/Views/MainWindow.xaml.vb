@@ -24,7 +24,7 @@ Public Class MainWindow
 Private m_manNes As NesDbgWrap.NesMan.NesManager
 Private m_manPpu As NesDbgWrap.NesMan.BasePpuCore
 
-Priva
+Private m_manPpuModel As NesWpfControl.Models.PpuManagerModel
 
 ''========================================================================
 ''
