@@ -1,11 +1,62 @@
-﻿
+﻿''  -*-  coding: utf-8-with-signature  -*-  ''
+''************************************************************************
+''                                                                      ''
+''                  ----   NES Debugger Project   ----                  ''
+''                                                                      ''
+''          Copyright (C), 2026-2026, Takahiro Itou                     ''
+''          All Rights Reserved.                                        ''
+''                                                                      ''
+''          License: (See COPYING or LICENSE files)                     ''
+''          GNU Affero General Public License (AGPL) version 3,         ''
+''          or (at your option) any later version.                      ''
+''                                                                      ''
+''************************************************************************
+
 Namespace Global.NesDebugView.Views
 
 Public Class MainWindow
 
+''======================================================================
+''
+''    Member Variables.
+''
+
 Private m_manNes As NesDbgWrap.NesMan.NesManager
 Private m_manPpu As NesDbgWrap.NesMan.BasePpuCore
 
+Priva
+
+''========================================================================
+''
+''    Constructor(s) and Destructor.
+''
+
+Public Sub New()
+''--------------------------------------------------------------------
+''    コンストラクタ
+''--------------------------------------------------------------------
+
+End Sub
+
+''========================================================================
+''
+''    Properties.
+''
+
+''========================================================================
+''
+''    Public Member Functions.
+''
+
+''========================================================================
+''
+''    Protected Member Functions.
+''
+
+''========================================================================
+''
+''    For Internal Use Only.
+''
 
 Private Function isGameInitialized() As Boolean
 ''--------------------------------------------------------------------
@@ -59,6 +110,11 @@ Private Sub showGameScreen()
     Me.pfcGameView.showScreen()
 End Sub
 
+
+''========================================================================
+''
+''    Event Handlers.
+''
 
 Private Sub MainView_Load(sender As Object, e As EventArgs)
 ''--------------------------------------------------------------------
