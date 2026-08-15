@@ -48,6 +48,10 @@ public:
 
     typedef     WrapTarget::ColorArgb32         ColorArgb32;
 
+    typedef     WrapTarget::PosUnitType         PosUnitType;
+
+    typedef     WrapTarget::LenUnitType         LenUnitType;
+
 
 //========================================================================
 //
@@ -107,10 +111,10 @@ public:
     **/
     virtual  void
     allocateImage(
-            const  int  nWidth,
-            const  int  nHeight,
-            const  int  cbPixel,
-            const  int  lStride);
+            const  PosUnitType  nWidth,
+            const  PosUnitType  nHeight,
+            const  LenUnitType  cbPixel,
+            const  LenUnitType  lStride);
 
     //----------------------------------------------------------------
     /**   バッファの単純コピーができるか確認する。
@@ -135,10 +139,10 @@ public:
     virtual  void
     copyRectangle(
             const  FullColorImage^  imgSrc,
-            const  int              x1,
-            const  int              y1,
-            const  int              x2,
-            const  int              y2);
+            const  PosUnitType      x1,
+            const  PosUnitType      y1,
+            const  PosUnitType      x2,
+            const  PosUnitType      y2);
 
     //----------------------------------------------------------------
     /**   バッファの内容を単純にコピーする。
@@ -167,11 +171,11 @@ public:
     **/
     virtual  void
     createImage(
-            const  int  nWidth,
-            const  int  nHeight,
-            const  int  cbPixel,
-            const  int  lStride,
-            void  *     lpBits);
+            const  PosUnitType  nWidth,
+            const  PosUnitType  nHeight,
+            const  LenUnitType  cbPixel,
+            const  LenUnitType  lStride,
+            void  *             lpBits);
 
     //----------------------------------------------------------------
     /**   イメージを作成する。
@@ -184,11 +188,11 @@ public:
     **/
     virtual  void
     createImage(
-            const  int  nWidth,
-            const  int  nHeight,
-            const  int  cbPixel,
-            const  int  lStride,
-            IntPtr      lpBits);
+            const  PosUnitType  nWidth,
+            const  PosUnitType  nHeight,
+            const  LenUnitType  cbPixel,
+            const  LenUnitType  lStride,
+            IntPtr              lpBits);
 
     //----------------------------------------------------------------
     /**   サンプル画像を描画する。
@@ -222,11 +226,11 @@ public:
     **/
     void
     fillRectangle(
-            const  int  x1,
-            const  int  y1,
-            const  int  x2,
-            const  int  y2,
-            const  int  color);
+            const  PosUnitType  x1,
+            const  PosUnitType  y1,
+            const  PosUnitType  x2,
+            const  PosUnitType  y2,
+            const  ColorArgb32  color);
 
 //========================================================================
 //
@@ -238,7 +242,7 @@ public:
     /**   ピクセル当たりのバイト数を取得する。
     **
     **/
-    inline  int
+    inline  LenUnitType
     getBytesPerPixel()
     {
         return  this->m_ptrObj->getBytesPerPixel();
@@ -248,7 +252,7 @@ public:
     /**   画像の高さを取得する。
     **
     **/
-    inline  int
+    inline  PosUnitType
     getHeight()
     {
         return  this->m_ptrObj->getHeight();
@@ -258,7 +262,7 @@ public:
     /**   行当たりのバイト数（ストライド）を取得する。
     **
     **/
-    inline  int
+    inline  LenUnitType
     getStride()
     {
         return  this->m_ptrObj->getStride();
@@ -268,7 +272,7 @@ public:
     /**   画像の幅を取得する。
     **
     **/
-    inline  int
+    inline  PosUnitType
     getWidth()
     {
         return  this->m_ptrObj->getWidth();
