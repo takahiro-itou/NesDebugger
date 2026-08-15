@@ -101,10 +101,10 @@ FullColorImage::!FullColorImage()
 
 void
 FullColorImage::allocateImage(
-        const  int  nWidth,
-        const  int  nHeight,
-        const  int  cbPixel,
-        const  int  lStride)
+        const  PosUnitType  nWidth,
+        const  PosUnitType  nHeight,
+        const  LenUnitType  cbPixel,
+        const  LenUnitType  lStride)
 {
     this->m_ptrObj->allocateImage(nWidth, nHeight, cbPixel, lStride);
 }
@@ -138,10 +138,10 @@ FullColorImage::copyImage(
 void
 FullColorImage::copyRectangle(
         const  FullColorImage^  imgSrc,
-        const  int              x1,
-        const  int              y1,
-        const  int              x2,
-        const  int              y2)
+        const  PosUnitType      x1,
+        const  PosUnitType      y1,
+        const  PosUnitType      x2,
+        const  PosUnitType      y2)
 {
     this->m_ptrObj->copyRectangle(*(imgSrc->m_ptrObj), x1, y1, x2, y2);
 }
@@ -174,11 +174,11 @@ FullColorImage::copyToBuffer(
 
 void
 FullColorImage::createImage(
-        const  int  nWidth,
-        const  int  nHeight,
-        const  int  cbPixel,
-        const  int  lStride,
-        void  *     lpBits)
+        const  PosUnitType  nWidth,
+        const  PosUnitType  nHeight,
+        const  LenUnitType  cbPixel,
+        const  LenUnitType  lStride,
+        void  *             lpBits)
 {
     this->m_ptrObj->createImage(
             nWidth, nHeight, cbPixel, lStride, lpBits
@@ -191,11 +191,11 @@ FullColorImage::createImage(
 
 void
 FullColorImage::createImage(
-        const  int  nWidth,
-        const  int  nHeight,
-        const  int  cbPixel,
-        const  int  lStride,
-        IntPtr      lpBits)
+        const  PosUnitType  nWidth,
+        const  PosUnitType  nHeight,
+        const  LenUnitType  cbPixel,
+        const  LenUnitType  lStride,
+        IntPtr              lpBits)
 {
     this->m_ptrObj->createImage(
             nWidth, nHeight, cbPixel, lStride, lpBits.ToPointer()
@@ -239,11 +239,11 @@ FullColorImage::freeImageBuffer()
 
 void
 FullColorImage::fillRectangle(
-        const  int  x1,
-        const  int  y1,
-        const  int  x2,
-        const  int  y2,
-        const  int  color)
+        const  PosUnitType  x1,
+        const  PosUnitType  y1,
+        const  PosUnitType  x2,
+        const  PosUnitType  y2,
+        const  ColorArgb32  color)
 {
     this->m_ptrObj->fillRectangle(x1, y1, x2, y2, color);
 }
