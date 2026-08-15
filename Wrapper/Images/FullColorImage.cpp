@@ -180,8 +180,8 @@ FullColorImage::createImage(
         const  int  lStride,
         void  *     lpBits)
 {
-    return  this->m_ptrObj->createImage(
-                nWidth, nHeight, cbPixel, lStride, lpBits
+    this->m_ptrObj->createImage(
+            nWidth, nHeight, cbPixel, lStride, lpBits
     );
 }
 
@@ -197,8 +197,8 @@ FullColorImage::createImage(
         const  int  lStride,
         IntPtr      lpBits)
 {
-    return  this->m_ptrObj->createImage(
-                nWidth, nHeight, cbPixel, lStride, lpBits.ToPointer()
+    this->m_ptrObj->createImage(
+            nWidth, nHeight, cbPixel, lStride, lpBits.ToPointer()
     );
 }
 
@@ -214,7 +214,7 @@ FullColorImage::drawSample(
         const  ColorArgb32  colBL,
         const  ColorArgb32  colBR)
 {
-    return  this->m_ptrObj->drawSample(colBG, colTL, colTR, colBL, colBR);
+    this->m_ptrObj->drawSample(colBG, colTL, colTR, colBL, colBR);
 }
 
 //----------------------------------------------------------------
@@ -245,7 +245,7 @@ FullColorImage::fillRectangle(
         const  int  y2,
         const  int  color)
 {
-    return  this->m_ptrObj->fillRectangle(x1, y1, x2, y2, color);
+    this->m_ptrObj->fillRectangle(x1, y1, x2, y2, color);
 }
 
 //========================================================================
