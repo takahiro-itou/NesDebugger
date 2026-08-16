@@ -72,10 +72,14 @@ Private Function initializeScreen(
 ''--------------------------------------------------------------------
 ''    画面を初期化する
 ''--------------------------------------------------------------------
-    Me.pfcGameView.initializeScreenImage(w, h)
-    Me.pfcGameView.setupPpuManager(Me.m_manPpu)
-    showGameScreen()
-    Return True
+
+    With Me.pfcGameView
+        .initializeScreenImage(w, h)
+        .setupPpuManager(Me.m_manPpu)
+        .clearScreen()
+    End With
+
+    Return  True
 End Function
 
 
@@ -105,9 +109,7 @@ Private Sub showGameScreen()
 ''    画像を表示する
 ''--------------------------------------------------------------------
     If Not isGameInitialized() Then Exit Sub
-
     Me.pfcGameView.drawScreen()
-    Me.pfcGameView.showScreen()
 End Sub
 
 
@@ -166,7 +168,7 @@ Dim p As System.Drawing.Point
         showGameScreen()
         Me.Title = i & " SCAN:" & p.x & "," & p.y & " PC:" &
                 HEX(Me.m_manNes.getNextPC())
-        await System.Threading.Tasks.Task.Delay(10)
+        await  System.Threading.Tasks.Task.Delay(10)
     Next i
     System.Threading.Thread.Sleep(16)
     System.Windows.MessageBox.Show("実行完了")
