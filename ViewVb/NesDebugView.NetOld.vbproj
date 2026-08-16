@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Application.xaml.vb" />
     <Compile Include="Views/MainWindow.xaml.vb" />
   </ItemGroup>
 
